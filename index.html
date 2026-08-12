@@ -11,7 +11,7 @@
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://m-erts.github.io/geoanalytics-realestate/">
-<meta property="og:image" content="https://m-erts.github.io/geoanalytics-realestate/preview-v2.png">
+<meta property="og:image" content="https://m-erts.github.io/geoanalytics-realestate/preview-v3.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Urban Mash">
@@ -257,6 +257,37 @@ ol.top5 .sc{margin-left:auto;font-family:"JetBrains Mono",monospace;font-weight:
 .obj{cursor:default}
 .cvdot{cursor:pointer}
 .linkline{stroke-width:.9;opacity:.5}
+
+/* ---------- Spatial K-Fold: сравнение четырёх нарезок ---------- */
+.splits{display:grid;gap:10px;margin:2px 0 0}
+.splitrow{
+  border:1px solid var(--line);background:var(--paper2);padding:12px 14px;
+  display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:2px 14px;align-items:baseline
+}
+.splitrow.trap{border:2px solid var(--hot);padding:11px 13px}
+.splitrow.honest{border-left:4px solid var(--cold);padding-left:11px}
+.splitrow h4{
+  grid-column:1;grid-row:1;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;margin:0;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap
+}
+.splitrow .tag{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.08em;
+  color:var(--paper2);background:var(--hot);padding:2px 5px
+}
+.splitrow .m{
+  font-family:"JetBrains Mono",monospace;font-size:19px;font-weight:600;
+  text-align:right;grid-column:2;grid-row:1 / span 2;align-self:center
+}
+.splitrow .sub{grid-column:1;grid-row:2;font-size:12px;color:var(--ink2);line-height:1.45}
+.splitrow .tr{grid-column:1 / -1;grid-row:3;height:7px;background:var(--line2);margin-top:8px}
+.splitrow .tr i{display:block;height:100%;background:var(--mag)}
+.splitrow.trap .tr i{background:var(--hot)}
+.splitrow.leaky .tr i{background:var(--line)}
+@media (max-width:520px){
+  .splitrow{grid-template-columns:minmax(0,1fr) 78px}
+  .splitrow .m{font-size:17px}
+}
 
 /* ---------- tab 3: cases ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
@@ -594,8 +625,10 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
           <input type="range" id="cv-k" min="1" max="15" value="5">
         </div>
         <div class="seg" id="cv-view" style="flex-direction:column">
-          <button data-v="random" aria-pressed="true">Показать случайный сплит</button>
-          <button data-v="spatial" aria-pressed="false">Показать сплит по домам</button>
+          <button data-v="random" aria-pressed="true">Случайный сплит</button>
+          <button data-v="spatial" aria-pressed="false">Сплит по домам</button>
+          <button data-v="blkpt" aria-pressed="false">Блоки карты, по точкам</button>
+          <button data-v="blkbld" aria-pressed="false">Блоки карты, по домам</button>
         </div>
       </div>
       <div>
@@ -607,7 +640,7 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
     <div>
       <div class="map-stage">
         <svg id="cvmap" viewBox="0 0 800 400" role="img" aria-label="Карта объявлений с разбиением на обучающую и тестовую выборки"></svg>
-        <div class="stage-off jsoff">Здесь демо утечки через географию: 468 объявлений в 26 домах и два способа разбить выборку. Нужен браузер со скриптами.</div>
+        <div class="stage-off jsoff">Здесь демо утечки через географию: 468 объявлений в 26 домах и четыре способа разбить выборку. Нужен браузер со скриптами.</div>
         <div class="legend"><span class="mono" id="cv-legend"></span></div>
       </div>
       <div class="card" style="margin-top:18px">
@@ -617,13 +650,29 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
           Модель одна и та же — kNN по координатам, то есть ровно то, чем по факту работает любой бустинг с гео-признаками.
           Меняется только способ разбиения выборки. При случайном сплите у каждой тестовой квартиры соседи по обучению стоят в том же подъезде, и модель просто копирует их цену: MAPE выглядит прекрасно.
           Сплит по домам увозит в тест дом целиком — и остаётся честная ошибка на объекте, который модель раньше не видела. Поставьте разброс между домами в ноль: разрыв схлопнется с семи с лишним раз до двух-трёх, но в ноль не уйдёт — это и есть неустранимая ошибка интерполяции на незнакомой территории.
-          В проде это Spatial K-Fold: в фолд целиком уезжает дом или кластер DBSCAN. Если модель поедет в новый район, фолды нарезают блоками карты — там ошибка будет ещё выше.
+          В проде это Spatial K-Fold: в фолд целиком уезжает дом или кластер DBSCAN. Блоки карты — следующий шаг, если модель поедет в незнакомый район. Только «нарезать блоками» — ещё не значит «проверить строго»: ниже посчитано, что даёт каждая из четырёх нарезок и где в них ловушка.
         </p>
         <p class="note" style="margin:14px 0 0">
           Ещё две проверки, которые экономят месяцы. Первая — линейный бейзлайн: в разборе рынка Кальяри на 1153 объявлениях нейросеть выиграла по метрикам, но отрыв от обычной линейной регрессии оказался мал, и авторы прямо пишут, что нелинейные модели не дали большого преимущества. Прежде чем защищать бюджет на бустинг, посчитайте, сколько он реально отыгрывает у регрессии.
           Вторая — пропуски. Незаполненные поля в объявлении не выбрасывают и не заполняют средним, а кодируют отдельной категорией «не указано»: умолчание продавца коррелирует с сегментом рынка. Если человек не написал состояние ремонта — это тоже признак.
         </p>
       </div>
+    </div>
+  </div>
+
+  <div style="margin-top:34px">
+    <p class="rail-title">Четыре нарезки фолдов — и почему «блоками» само по себе ничего не гарантирует</p>
+    <p class="note" style="max-width:80ch;margin:0 0 16px">
+      Здесь та же модель и те же 468 объявлений, но полная кросс-валидация: каждая точка ровно один раз оказывается в тесте, поэтому произвольный выбор «вот этот кусок отложим» из результата убран. Ползунки выше действуют и на эту таблицу — покрутите разброс между домами и посмотрите, как меняется порядок строк. Кнопки слева от карты показывают любую из четырёх нарезок на самой карте.
+    </p>
+    <div class="splits" id="cv-splits"></div>
+    <div class="card" style="margin-top:16px">
+      <p class="note" id="cv-splits-verdict" style="margin:0"></p>
+      <p class="note" style="margin:12px 0 0">
+        Сетка блоков у второй и третьей строки одна и та же — 4 × 2 на всю карту, восемь фолдов. Разница между ними в одном: куда относить дом, которому граница блока прошла по двору. При нарезке по точкам часть его квартир уезжает в тест, а часть остаётся в обучении, и у тестовых снова появляется сосед из своего же дома — тот самый механизм, которым обманывает случайный сплит, просто в меньшем масштабе. При нарезке по домам блок собирается из целых домов, и утечки нет: у первой строки соседей из своего дома почти пять из пяти, у второй уже около одного, у двух последних ровно ноль.
+        <br><br>
+        А вот сравнивать блоки с leave-one-building-out по принципу «что строже» бессмысленно, и это стоило мне переписанного абзаца в статье. Порядок двух последних строк меняется вместе с разбросом между домами, потому что промах складывается из двух разных вещей: из того, что модель не знает собственной надбавки нового дома, и из того, что она не знает, как устроена цена в этой части карты. Блок отодвигает соседей вдвое дальше и увеличивает вторую составляющую, но первая при этом чуть уменьшается, и в сумме они частично гасят друг друга — цифры в выводе выше пересчитываются на каждом положении ползунка. Так что нарезку выбирают не по фольклору, а под тот риск, который страшен: незнакомый дом в знакомом районе или незнакомый район целиком. Единственное, что не зависит ни от чего, — счётчик соседей из своей группы. Если он не ноль, проверка мерит не то, что вы думаете.
+      </p>
     </div>
   </div>
 </section>
@@ -1296,11 +1345,33 @@ blds.forEach((b,bi)=>{
   }
 });
 const HOLDB=[1,5,9,13,17,21,25];
+/* сетка блоков карты 4 × 2 — восемь фолдов для блочной кросс-валидации.
+   bpt — блок по координатам самой квартиры, bbld — блок по центру её дома.
+   Разница между этими двумя способами и есть вся разница между строгой
+   проверкой и той, которая ей только кажется. */
+const CVG={BX:4,BY:2,X0:10,X1:790,Y0:10,Y1:390,show:[2,5]};
+const CVBW=(CVG.X1-CVG.X0)/CVG.BX, CVBH=(CVG.Y1-CVG.Y0)/CVG.BY;
+const blockOf=(x,y)=>clamp(Math.floor((y-CVG.Y0)/CVBH),0,CVG.BY-1)*CVG.BX
+                    +clamp(Math.floor((x-CVG.X0)/CVBW),0,CVG.BX-1);
 flats.forEach(f=>{
   f.rndTest=f.u<.25;
   f.spTest=HOLDB.includes(f.b);
+  f.fold4=Math.min(3,Math.floor(f.u*4));
+  f.bpt=blockOf(f.x,f.y);
+  f.bbld=blockOf(blds[f.b].x,blds[f.b].y);
+  f.blkPt=CVG.show.includes(f.bpt);   /* что показываем на карте: блоки 2 и 5 */
+  f.blkBld=CVG.show.includes(f.bbld);
 });
+/* дома, которые граница блока разрезала пополам — по всей сетке и отдельно
+   среди показанных на карте блоков */
+const CUTALL=blds.filter((b,bi)=>
+  new Set(flats.filter(f=>f.b===bi).map(f=>f.bpt)).size>1).length;
+const CUTSHOW=blds.map((b,bi)=>{
+  const fs=flats.filter(f=>f.b===bi), t=fs.filter(f=>f.blkPt).length;
+  return (t>0&&t<fs.length)?bi:null;
+}).filter(v=>v!==null);
 const CV={sigma:.10,k:5,view:'random',sel:null};
+const VKEY={random:'rndTest',spatial:'spTest',blkpt:'blkPt',blkbld:'blkBld'};
 function priceOf(f){return f.base*(1+blds[f.b].e*CV.sigma)*(1+f.noise)}
 
 /* один проход считает и метрику, и то, что нужно карте:
@@ -1328,8 +1399,8 @@ const cvsvg=$('#cvmap');
 function renderCV(){
   const R=evalSplit('rndTest'), S=evalSplit('spTest');
   const mR=R.mape, mS=S.mape;
-  const A=CV.view==='random'?R:S;
-  const key=CV.view==='random'?'rndTest':'spTest';
+  const key=VKEY[CV.view]||'rndTest';
+  const A=key==='rndTest'?R:(key==='spTest'?S:evalSplit(key));
 
   /* выбранная точка должна принадлежать текущей тестовой выборке */
   if(!CV.sel||!CV.sel[key]){
@@ -1350,6 +1421,27 @@ function renderCV(){
   if(CV.view==='spatial'){
     HOLDB.forEach(bi=>g.appendChild(el('circle',{cx:blds[bi].x,cy:blds[bi].y,r:24,
       fill:'#6C2BD9',opacity:.10,stroke:'#6C2BD9','stroke-width':1.2,'stroke-dasharray':'4 3'})));
+  }
+  if(CV.view==='blkpt'||CV.view==='blkbld'){
+    /* закрашиваем отложенные блоки, потом рисуем всю сетку */
+    CVG.show.forEach(k=>g.appendChild(el('rect',{
+      x:CVG.X0+(k%CVG.BX)*CVBW, y:CVG.Y0+Math.floor(k/CVG.BX)*CVBH,
+      width:CVBW, height:CVBH, fill:'#6C2BD9', opacity:.09})));
+    for(let bx=1;bx<CVG.BX;bx++)g.appendChild(el('line',{
+      x1:CVG.X0+bx*CVBW,y1:CVG.Y0,x2:CVG.X0+bx*CVBW,y2:CVG.Y1,
+      stroke:'#57655C','stroke-width':1,'stroke-dasharray':'5 4',opacity:.75}));
+    for(let by=1;by<CVG.BY;by++)g.appendChild(el('line',{
+      x1:CVG.X0,y1:CVG.Y0+by*CVBH,x2:CVG.X1,y2:CVG.Y0+by*CVBH,
+      stroke:'#57655C','stroke-width':1,'stroke-dasharray':'5 4',opacity:.75}));
+    if(CV.view==='blkpt'){
+      /* дома, разрезанные границей: их половина осталась в обучении */
+      CUTSHOW.forEach(bi=>g.appendChild(el('circle',{cx:blds[bi].x,cy:blds[bi].y,r:22,
+        fill:'none',stroke:'#E8642B','stroke-width':2,'stroke-dasharray':'3 3'})));
+    }else{
+      flats.filter(f=>f.blkBld).reduce((s,f)=>s.add(f.b),new Set()).forEach(bi=>
+        g.appendChild(el('circle',{cx:blds[bi].x,cy:blds[bi].y,r:22,
+          fill:'none',stroke:'#6C2BD9','stroke-width':1.4,'stroke-dasharray':'4 3'})));
+    }
   }
   /* связи выбранной точки с её k соседями по обучающей выборке — так виден смысл ползунка k */
   (A.nb.get(CV.sel)||[]).forEach(r=>{
@@ -1372,7 +1464,10 @@ function renderCV(){
 
   const es=(A.err.get(CV.sel)*100).toFixed(1);
   const same=(A.nb.get(CV.sel)||[]).filter(r=>r.b===CV.sel.b).length;
-  $('#cv-legend').textContent=flats.length+' объявлений в '+blds.length+' домах · цвет — цена, радиус тестовой точки — её ошибка · '
+  const vnote=CV.view==='blkpt'?' · сетка 4 × 2, отложены блоки 2 и 5, границей разрезано домов: '+CUTSHOW.length
+             :CV.view==='blkbld'?' · те же блоки, но собранные из целых домов'
+             :'';
+  $('#cv-legend').textContent=flats.length+' объявлений в '+blds.length+' домах · цвет — цена, радиус тестовой точки — её ошибка'+vnote+' · '
     +'у выбранной точки '+same+' из '+CV.k+' соседей в её же доме, ошибка '+es+'%';
 
   const ratio=mR>0?(mS/mR):1;
@@ -1385,13 +1480,109 @@ function renderCV(){
       ? 'Дома почти не отличаются друг от друга — утечке нечего переносить, разрыв схлопнулся до <b>×'+ratio.toFixed(1)+'</b>. Остаток — не обман, а честная цена незнания территории: на новом месте у модели нет близких аналогов, и полностью этот разрыв не закрывается никогда.'
       : 'Случайный сплит рисует <b>'+mR.toFixed(1)+'%</b> ошибки, честный — <b>'+mS.toFixed(1)+'%</b>. Разница целиком берётся из того, что модель подглядела цену соседей по подъезду. Ровно на первом числе строятся презентации, после которых модель едет в новый район и разваливается.')+'</div>';
 }
-$('#cv-sigma').addEventListener('input',e=>{CV.sigma=+e.target.value/100;$('#cv-sigma-v').textContent=e.target.value+'%';renderCV()});
-$('#cv-k').addEventListener('input',e=>{CV.k=+e.target.value;$('#cv-k-v').textContent=CV.k;renderCV()});
+/* ---- полная кросс-валидация по четырём нарезкам ----
+   Состав соседей зависит только от нарезки и от k, но не от разброса между
+   домами. Поэтому 15 ближайших «чужих» соседей для каждой квартиры считаются
+   один раз при загрузке, а ползунки потом лишь пересчитывают цены — иначе
+   каждое движение ползунка стоило бы четырёх полных прогонов kNN. */
+const KMAX=15;
+const SCHEMES=[
+  {id:'rnd',   n:'Случайный сплит', fold:f=>f.fold4, cls:'leaky',
+   note:'кросс-валидация «как по умолчанию»: перемешали квартиры и разбили на четыре части'},
+  {id:'blkpt', n:'Блоки карты, нарезанные по точкам', fold:f=>f.bpt, cls:'trap', trap:true,
+   note:'сетка 4 × 2, в фолд уезжают квартиры, попавшие внутрь блока'},
+  {id:'blkbld',n:'Блоки карты, нарезанные по домам', fold:f=>f.bbld, cls:'honest',
+   note:'та же сетка, но блок собран из целых домов — дом относят по своему центру'},
+  {id:'bld',   n:'По домам, leave-one-building-out', fold:f=>f.b, cls:'honest',
+   note:'26 фолдов: каждый дом по очереди уезжает в тест целиком'}
+];
+SCHEMES.forEach(s=>{
+  const fold=flats.map(s.fold);
+  s.nb=flats.map((t,i)=>{
+    const tf=fold[i], best=[];
+    for(let j=0;j<flats.length;j++){
+      if(fold[j]===tf)continue;
+      const r=flats[j], d=Math.hypot(r.x-t.x,r.y-t.y);
+      if(best.length===KMAX&&d>=best[KMAX-1].d)continue;
+      let p=best.length; while(p>0&&best[p-1].d>d)p--;
+      best.splice(p,0,{d,r});
+      if(best.length>KMAX)best.pop();
+    }
+    return best;
+  });
+});
+function schemeStats(s){
+  let e=0,same=0,dist=0,leak=0,eff=0,geo=0;
+  flats.forEach((t,i)=>{
+    const near=s.nb[i].slice(0,CV.k);
+    const pred=near.reduce((a,n)=>a+priceOf(n.r),0)/near.length;
+    const act=priceOf(t), sm=near.filter(n=>n.r.b===t.b).length;
+    e+=Math.abs(pred-act)/act; same+=sm; dist+=near.reduce((a,n)=>a+n.d,0)/near.length;
+    if(sm>0)leak++;
+    /* раскладываем промах на две части: «какая у дома своя надбавка»
+       и «где этот дом стоит» — иначе про разницу между двумя честными
+       нарезками можно насочинять любой механизм */
+    eff+=Math.abs(near.reduce((a,n)=>a+blds[n.r.b].e,0)/near.length-blds[t.b].e)*CV.sigma;
+    geo+=Math.abs(near.reduce((a,n)=>a+n.r.base,0)/near.length-t.base)/t.base;
+  });
+  const n=flats.length;
+  return {mape:e/n*100, same:same/n, dist:dist/n, leak:leak/n*100, eff:eff/n*100, geo:geo/n*100};
+}
+const num=(v,d)=>v.toFixed(d).replace('.',',');
+/* та же квартира под двумя нарезками одной сетки — но считаем только те,
+   у которых нарезка по точкам вернула соседа из своего дома. На всей карте
+   эффект размывается усреднением, здесь виден в чистом виде */
+function leakDetail(){
+  const A=SCHEMES.find(s=>s.id==='blkpt'), B=SCHEMES.find(s=>s.id==='blkbld');
+  let n=0,ea=0,eb=0;
+  flats.forEach((t,i)=>{
+    const na=A.nb[i].slice(0,CV.k);
+    if(!na.some(x=>x.r.b===t.b))return;
+    const nb=B.nb[i].slice(0,CV.k), act=priceOf(t);
+    ea+=Math.abs(na.reduce((s,x)=>s+priceOf(x.r),0)/na.length-act)/act;
+    eb+=Math.abs(nb.reduce((s,x)=>s+priceOf(x.r),0)/nb.length-act)/act;
+    n++;
+  });
+  return n?{n,a:ea/n*100,b:eb/n*100}:{n:0,a:0,b:0};
+}
+function renderSplits(){
+  const rows=SCHEMES.map(s=>({s,st:schemeStats(s)}));
+  const mx=Math.max(...rows.map(r=>r.st.mape));
+  $('#cv-splits').innerHTML=rows.map(({s,st})=>
+    '<div class="splitrow '+s.cls+'">'
+     +'<h4>'+s.n+(s.trap?'<span class="tag">ЛОВУШКА</span>':'')+'</h4>'
+     +'<div class="m">'+num(st.mape,2)+'%</div>'
+     +'<div class="sub">'+s.note+'<br>соседей из своего дома <b>'+num(st.same,2)+' из '+CV.k
+     +'</b> · сосед в среднем в '+Math.round(st.dist)+' px · с утечкой '+Math.round(st.leak)+'% квартир</div>'
+     +'<div class="tr"><i style="width:'+(st.mape/mx*100).toFixed(1)+'%"></i></div>'
+    +'</div>').join('');
+  const g=id=>rows.find(r=>r.s.id===id).st;
+  const rn=g('rnd'), bp=g('blkpt'), bb=g('blkbld'), bd=g('bld');
+  const cross=bd.mape>bb.mape;
+  const L=leakDetail();
+  $('#cv-splits-verdict').innerHTML=
+    'Одна и та же сетка блоков даёт <b>'+num(bp.mape,2)+'%</b> и <b>'+num(bb.mape,2)+'%</b> — разница выглядит несущественной, '
+   +'и ровно это усреднение и прячет. Меняли не модель и не размер блока, а единственное правило: куда относить дом, разрезанный границей. '
+   +'Таких домов '+CUTALL+' из '+blds.length+', и из-за них у <b>'+Math.round(bp.leak)+'%</b> квартир среди '+CV.k
+   +' ближайших соседей снова оказывается кто-то из своего же дома. '
+   +'На этих '+L.n+' квартирах нарезка по точкам показывает <b>'+num(L.a,2)+'%</b> вместо <b>'+num(L.b,2)+'%</b> — занижение в <b>×'+num(L.b/Math.max(L.a,1e-9),1)
+   +'</b>. По всей карте оно размывается до ×'+num(bb.mape/bp.mape,2)+', и именно поэтому такая проверка спокойно живёт в проде: итоговая метрика выглядит правдоподобно. '
+   +'Строгая проверка — та, где ошибка выше. '
+   +(cross
+      ? 'А вот «блоками всегда строже, чем по домам» — не закон. При этом разбросе строже оказывается leave-one-building-out: <b>'+num(bd.mape,2)+'%</b> против <b>'+num(bb.mape,2)+'%</b> у блоков, хотя соседи у него всего в '+Math.round(bd.dist)+' px, а у блоков в '+Math.round(bb.dist)+'. '
+      : 'При этом разбросе блоки строже отдельных домов: <b>'+num(bb.mape,2)+'%</b> против <b>'+num(bd.mape,2)+'%</b> — соседей приходится искать в '+Math.round(bb.dist)+' px вместо '+Math.round(bd.dist)+'. Но это не закон: покрутите разброс, и две последние строки поменяются местами. ')
+   +'Промах раскладывается на две части: «какая у дома своя надбавка» и «где этот дом стоит». У блоков вторая часть больше ('+num(bb.geo,2)+'% против '+num(bd.geo,2)+'% — соседи-то дальше), первая чуть меньше ('+num(bb.eff,2)+'% против '+num(bd.eff,2)+'%), и в сумме они частично гасят друг друга. Так что выбирать нарезку по фольклору «блоки строже» нельзя — выбирать надо под тот риск, которого боитесь: незнакомый дом в знакомом районе или незнакомый район. '
+   +'Случайный сплит для масштаба — <b>'+num(rn.mape,2)+'%</b>, у него сосед лежит в '+Math.round(rn.dist)+' px, то есть в том же доме.';
+}
+
+function renderCVAll(){renderCV();renderSplits()}
+$('#cv-sigma').addEventListener('input',e=>{CV.sigma=+e.target.value/100;$('#cv-sigma-v').textContent=e.target.value+'%';renderCVAll()});
+$('#cv-k').addEventListener('input',e=>{CV.k=+e.target.value;$('#cv-k-v').textContent=CV.k;renderCVAll()});
 document.querySelectorAll('#cv-view button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#cv-view button').forEach(o=>o.setAttribute('aria-pressed','false'));
   b.setAttribute('aria-pressed','true');CV.view=b.dataset.v;renderCV();
 }));
-renderCV();
+renderCVAll();
 
 /* ================= tab: typology (Ward clustering) ================= */
 const TYF=[
