@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Локация — это не «чуйка», это фичи · Urban Mash</title>
-<meta name="description" content="Интерактивный планшет: скоринг площадок по гексагональной сетке, SHAP-разбор цены метра, типология районов, размещение бригад (p-median / p-center / MCLP) и живое демо утечки через географию. Автор — Мария Эрцеговац, канал Urban Mash.">
-<meta name="author" content="Мария Эрцеговац">
+<title>Location isn’t a hunch — it’s features · Urban Mash</title>
+<meta name="description" content="Interactive dashboard: site scoring on a hexagonal grid, a SHAP-style breakdown of price per m², neighbourhood typology, crew allocation (p-median / p-center / MCLP) and a live demo of leakage through geography. By Marija Ercegovac, Urban Mash.">
+<meta name="author" content="Marija Ercegovac">
 <meta name="theme-color" content="#0140ED">
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://m-erts.github.io/geoanalytics-realestate/">
-<link rel="canonical" href="https://m-erts.github.io/geoanalytics-realestate/">
+<meta property="og:url" content="https://m-erts.github.io/geoanalytics-realestate/en.html">
+<link rel="canonical" href="https://m-erts.github.io/geoanalytics-realestate/en.html">
 <link rel="alternate" hreflang="ru" href="https://m-erts.github.io/geoanalytics-realestate/">
 <link rel="alternate" hreflang="en" href="https://m-erts.github.io/geoanalytics-realestate/en.html">
 <link rel="alternate" hreflang="x-default" href="https://m-erts.github.io/geoanalytics-realestate/">
@@ -19,28 +19,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Urban Mash">
-<meta property="og:title" content="Локация — это не «чуйка», это фичи">
-<meta property="og:description" content="Скоринг площадок, типология районов, декомпозиция цены метра, размещение бригад и утечка через географию — пять интерактивных демо по геоаналитике в недвижимости и разбор реальных внедрений.">
+<meta property="og:title" content="Location isn’t a hunch — it’s features">
+<meta property="og:description" content="Site scoring, neighbourhood typology, decomposition of price per m², crew allocation and leakage through geography — five interactive demos on geoanalytics in real estate, plus a review of real deployments.">
 <meta name="twitter:card" content="summary_large_image">
-<script>
-/* Language routing. One URL for both versions.
-   ?lang=ru / ?lang=en always wins and is remembered; otherwise the browser locale decides.
-   Runs before <body> so there is no flash of the wrong language. */
-(function(){
-  try{
-    var q=new URLSearchParams(location.search).get('lang');
-    if(q==='ru'||q==='en'){try{localStorage.setItem('um_lang',q)}catch(e){}}
-    var pick=q||(function(){try{return localStorage.getItem('um_lang')}catch(e){return null}})();
-    if(!pick){
-      var langs=navigator.languages||[navigator.language||''];
-      pick=/^ru\b/i.test(langs[0]||'')?'ru':'en';
-    }
-    if(pick==='en'&&!/en\.html$/.test(location.pathname)){
-      location.replace('en.html'+(q?'?lang=en':''));
-    }
-  }catch(e){}
-})();
-</script>
 <script>document.documentElement.className="js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,7 +70,7 @@ h1{
 h1 em{font-style:normal;color:var(--mag)}
 .lede{max-width:60ch;color:var(--ink2);font-size:16px}
 
-/* ---------- если скрипты выключены (предпросмотр в мессенджере) ---------- */
+/* ---------- if scripts are disabled (preview inside a messenger) ---------- */
 .js .jsoff{display:none!important}
 .jsoff{background:#FFF3E0;border:2px solid var(--hot);padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.5}
 .jsoff b{font-family:"Unbounded","Golos Text",sans-serif}
@@ -281,7 +262,7 @@ ol.top5 .sc{margin-left:auto;font-family:"JetBrains Mono",monospace;font-weight:
 .cvdot{cursor:pointer}
 .linkline{stroke-width:.9;opacity:.5}
 
-/* ---------- Spatial K-Fold: сравнение четырёх нарезок ---------- */
+/* ---------- Spatial K-Fold: comparison of the four schemes ---------- */
 .splits{display:grid;gap:10px;margin:2px 0 0}
 .splitrow{
   border:1px solid var(--line);background:var(--paper2);padding:12px 14px;
@@ -368,34 +349,34 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
 
 <header>
   <div class="hrow">
-    <div class="eyebrow"><span>Планшет №1</span><span>Геоаналитика · GeoML</span><a class="langsw" href="en.html?lang=en" hreflang="en">English version ↗</a></div>
+    <div class="eyebrow"><span>Dashboard #1</span><span>Geoanalytics · GeoML</span><a class="langsw" href="./?lang=ru" hreflang="ru">Русская версия ↗</a></div>
     <div class="signature">
-      <a class="brand" href="https://t.me/URBAN_MASH" target="_blank" rel="noopener" aria-label="Телеграм-канал Urban Mash">
+      <a class="brand" href="https://t.me/URBAN_MASH" target="_blank" rel="noopener" aria-label="Urban Mash Telegram channel">
         <img class="brand-mark" width="52" height="52" alt="" src="data:image/png;base64,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">
         <span class="brand-txt"><b>Urban&nbsp;Mash</b><i>t.me/URBAN_MASH</i></span>
       </a>
-      <span class="who">Мария Эрцеговац
+      <span class="who">Marija Ercegovac
         <a href="https://www.linkedin.com/in/marija-ercegovac/" target="_blank" rel="noopener">LinkedIn&nbsp;↗</a>
       </span>
     </div>
   </div>
-  <h1>Локация — это не «чуйка», это <em>фичи</em></h1>
-  <p class="lede">Пять демо, на которых geospatial data scientists зарабатывают в недвижимости — скоринг площадок, типология районов, декомпозиция цены метра, размещение бригад и живое доказательство утечки через географию, — плюс разбор реальных внедрений. Карты — на синтетическом городе; кейсы и коэффициенты настоящие, со ссылками на первоисточники.</p>
+  <h1>Location isn’t a hunch, it’s <em>features</em></h1>
+  <p class="lede">Five demos that geospatial data scientists get paid for in real estate — site scoring, neighbourhood typology, decomposition of price per m², crew allocation and a live proof of leakage through geography — plus a review of real deployments. The maps run on a synthetic city; the cases and coefficients are real, with links to primary sources.</p>
 </header>
 
 <div class="jsoff">
-  <b>Похоже, файл открыт в режиме предпросмотра.</b><br>
-  Мессенджеры и почтовые клиенты показывают html без скриптов — поэтому все карты и графики ниже будут пустыми.
-  Нажмите «Открыть в браузере» (Safari, Chrome) или откройте страницу по ссылке <a href="https://m-erts.github.io/geoanalytics-realestate/">m-erts.github.io/geoanalytics-realestate/</a> — там всё считается и крутится.
+  <b>It looks like this file is open in preview mode.</b><br>
+  Messengers and mail clients render html without scripts — so every map and chart below will be empty.
+  Tap “Open in browser” (Safari, Chrome) or open the page at <a href="https://m-erts.github.io/geoanalytics-realestate/">m-erts.github.io/geoanalytics-realestate/</a> — everything is computed and moves there.
 </div>
 
 <nav class="tabs" role="tablist">
-  <button role="tab" id="t-map" aria-controls="p-map" aria-selected="true">Скоринг площадок</button>
-  <button role="tab" id="t-typo" aria-controls="p-typo" aria-selected="false">Типология районов</button>
-  <button role="tab" id="t-calc" aria-controls="p-calc" aria-selected="false">Цена метра</button>
-  <button role="tab" id="t-cases" aria-controls="p-cases" aria-selected="false">Кейсы рынка</button>
-  <button role="tab" id="t-disp" aria-controls="p-disp" aria-selected="false">Диспатч бригад</button>
-  <button role="tab" id="t-cv" aria-controls="p-cv" aria-selected="false">Как обучают модель</button>
+  <button role="tab" id="t-map" aria-controls="p-map" aria-selected="true">Site scoring</button>
+  <button role="tab" id="t-typo" aria-controls="p-typo" aria-selected="false">Neighbourhood typology</button>
+  <button role="tab" id="t-calc" aria-controls="p-calc" aria-selected="false">Price per m²</button>
+  <button role="tab" id="t-cases" aria-controls="p-cases" aria-selected="false">Market cases</button>
+  <button role="tab" id="t-disp" aria-controls="p-disp" aria-selected="false">Crew dispatch</button>
+  <button role="tab" id="t-cv" aria-controls="p-cv" aria-selected="false">How the model is trained</button>
 </nav>
 
 <!-- ============ TAB 1 ============ -->
@@ -403,64 +384,64 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
   <div class="map-wrap">
     <div class="rail">
       <div>
-        <p class="rail-title">Что показываем на карте</p>
+        <p class="rail-title">What the map shows</p>
         <div class="modeseg" id="map-mode">
-          <button data-v="score" aria-pressed="true">Скоринг площадок</button>
-          <button data-v="shap" aria-pressed="false">Вклад локации в цену, ₽/м²</button>
+          <button data-v="score" aria-pressed="true">Site scoring</button>
+          <button data-v="shap" aria-pressed="false">Location premium in price, ₽/m²</button>
         </div>
         <p class="note" id="map-modenote"></p>
       </div>
       <div>
-        <p class="rail-title">Под какую задачу ищем</p>
+        <p class="rail-title">What are we looking for</p>
         <div class="presets" id="presets"></div>
-        <p class="note">Пресет расставляет веса. Дальше крутите руками — карта пересчитывается на каждом движении.</p>
+        <p class="note">The preset sets the weights. After that turn the dials yourself — the map recomputes on every move.</p>
       </div>
       <div>
-        <p class="rail-title">Веса факторов</p>
+        <p class="rail-title">Factor weights</p>
         <div id="sliders"></div>
       </div>
       <div>
-        <p class="rail-title">Слои</p>
+        <p class="rail-title">Layers</p>
         <div class="layers" id="layers"></div>
       </div>
     </div>
 
     <div>
       <div class="map-stage">
-        <svg id="map" viewBox="0 0 800 606" role="img" aria-label="Карта города, разбитая на гексагоны с оценкой привлекательности"></svg>
-        <div class="stage-off jsoff">Здесь карта города из 780 ячеек, которая пересчитывается на каждом движении ползунка. Нужен браузер со скриптами.</div>
+        <svg id="map" viewBox="0 0 800 606" role="img" aria-label="City map split into hexagons with an attractiveness score"></svg>
+        <div class="stage-off jsoff">This is a city map of 780 cells that recomputes on every slider move. Needs a browser with scripts.</div>
         <div id="tip"></div>
         <div class="legend">
-          <span id="ramp-lo">слабо</span><span class="ramp" id="ramp-bar"></span><span id="ramp-hi">сильно</span>
+          <span id="ramp-lo">weak</span><span class="ramp" id="ramp-bar"></span><span id="ramp-hi">strong</span>
           <span class="mono" id="hexcount"></span>
         </div>
       </div>
 
       <p class="note" style="margin:10px 0 0">
-        Каждый гексагон — ячейка около 400 м поперёк, аналог сетки H3 (здесь своя реализация, чтобы файл работал без интернета).
-        В режиме скоринга цвет — итоговый скор от 0 до 100 относительно лучшей ячейки в городе; в режиме «Вклад локации» — цена метра относительно медианы города. Тонкая чёрная обводка — топ-5, фиолетовая — выбранная.
-        Веса слева — коэффициенты интерпретируемой модели скоринга: в бою их подбирают не рукой, а обучением на факте (выручка, темпы продаж), и тогда они становятся настоящей feature importance.
-        Полупрозрачные ячейки — под ограничениями застройки: зона охраны наследия, приаэродромная территория и водоохранная полоса. Они исключены из рейтинга.
+        Each hexagon is a cell roughly 400 m across, an analogue of the H3 grid (a custom implementation here, so the file works offline).
+        In scoring mode the colour is the final score from 0 to 100 relative to the best cell in the city; in “Location premium” mode it is price per m² relative to the city median. A thin black outline marks the top 5, purple marks the selected cell.
+        The weights on the left are coefficients of an interpretable scoring model: in production they are not set by hand but learned from outcomes (revenue, sales velocity), and only then do they become real feature importance.
+        Semi-transparent cells fall under building restrictions: a heritage protection zone, an airport approach area and a water protection strip. They are excluded from the ranking.
       </p>
       <p class="note" style="margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line2)">
-        <b>Честная оговорка про режим «Вклад локации».</b> Коэффициент метро измерен на близости к станции — у КБ Стрелка это первые сотни метров.
-        Здесь он линейно продолжен на всю карту, поэтому в дальних ячейках работает уже не измеренная зависимость, а искусственный пол −18%.
-        Такие строки помечены словом «экстраполяция» в разборе ячейки, их <span class="mono" id="extrap-n"></span>.
-        Это ровно та ошибка, за которую гедонические модели ругают чаще всего: коэффициент, вынесенный за диапазон, на котором его оценивали, перестаёт что-либо измерять.
+        <b>An honest caveat about “Location premium” mode.</b> The metro coefficient was measured on proximity to a station — for KB Strelka that is the first few hundred metres.
+        Here it is extended linearly across the whole map, so in distant cells what is at work is no longer a measured relationship but an artificial floor of −18%.
+        Such rows are tagged “extrapolation” in the cell breakdown, and there are <span class="mono" id="extrap-n"></span>.
+        This is exactly the mistake hedonic models are criticised for most often: a coefficient pushed beyond the range it was estimated on stops measuring anything at all.
       </p>
       <p class="verdict" id="limwarn" style="margin-top:12px"></p>
 
       <div class="readout">
         <div class="card">
-          <p class="rail-title" style="margin-bottom:10px">Разбор ячейки</p>
+          <p class="rail-title" style="margin-bottom:10px">Cell breakdown</p>
           <div id="cellhead" style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
             <span class="score-big" id="cellscore">—</span>
-            <span class="mono note" id="cellid">кликните по карте</span>
+            <span class="mono note" id="cellid">click the map</span>
           </div>
           <div id="cellbars"></div>
         </div>
         <div class="card">
-          <p class="rail-title" style="margin-bottom:6px" id="top5title">Топ-5 площадок</p>
+          <p class="rail-title" style="margin-bottom:6px" id="top5title">Top 5 sites</p>
           <ol class="top5" id="top5"></ol>
         </div>
       </div>
@@ -470,49 +451,49 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
 
 <!-- ============ TAB: TYPOLOGY ============ -->
 <section class="panel" id="p-typo" role="tabpanel" aria-labelledby="t-typo" hidden>
-  <p class="lede" style="margin:0 0 22px">Скоринг отвечает на вопрос «где лучше». Кластеризация отвечает на другой: сколько вообще в городе типов территорий и какой из них рынок ещё не переоценил. Это разворот от «найти лучшую площадку» к «понять, где резерв» — тот самый разрыв между доступностью и ценой, на котором зарабатывают.</p>
+  <p class="lede" style="margin:0 0 22px">Scoring answers the question “where is better”. Clustering answers a different one: how many types of territory the city has at all, and which of them the market has not yet repriced. This is the pivot from “find the best site” to “understand where the headroom is” — the very gap between accessibility and price that people make money on.</p>
   <div class="map-wrap">
     <div class="rail">
       <div>
-        <p class="rail-title">Метод</p>
-        <p class="note">Агломеративная кластеризация Уорда по шести признакам района. Дерево строится один раз, без k на входе — а число кластеров выбирают потом, разрезая его там, где ветки расходятся далеко. Но выбрать k всё равно придётся, и это решение аналитика: подвигайте ползунок и убедитесь, что вывод от него не переворачивается.</p>
-        <p class="note" style="margin-top:9px">Район здесь — блок 3×3 гексагона по индексам сетки, поэтому границы получаются ступенчатыми: у соседних рядов шестиугольники смещены на полклетки. В рабочей задаче на этом месте родительская ячейка H3 более грубого разрешения — иерархия сетки ровно для этого и придумана.</p>
+        <p class="rail-title">Method</p>
+        <p class="note">Ward agglomerative clustering on six neighbourhood features. The tree is built once, with no k as input — the number of clusters is chosen afterwards, by cutting it where the branches diverge far apart. But you still have to choose k, and that is the analyst’s call: move the slider and check that the conclusion does not flip.</p>
+        <p class="note" style="margin-top:9px">A neighbourhood here is a 3×3 block of hexagons by grid index, so the borders come out stepped: in adjacent rows the hexagons are offset by half a cell. In a production task the parent H3 cell at a coarser resolution goes here — that is exactly what the grid hierarchy was invented for.</p>
       </div>
       <div>
-        <p class="rail-title">Параметры</p>
+        <p class="rail-title">Parameters</p>
         <div class="slider">
-          <label class="lab" for="ty-k"><span>Число кластеров</span><span class="val" id="ty-k-v">7</span></label>
+          <label class="lab" for="ty-k"><span>Number of clusters</span><span class="val" id="ty-k-v">7</span></label>
           <input type="range" id="ty-k" min="2" max="8" value="7">
         </div>
         <p class="note" id="ty-cut"></p>
       </div>
       <div>
-        <p class="rail-title">Где резерв</p>
+        <p class="rail-title">Where the headroom is</p>
         <div id="ty-verdict"></div>
       </div>
     </div>
 
     <div>
       <div class="map-stage">
-        <svg id="tymap" viewBox="0 0 800 606" role="img" aria-label="Карта города, раскрашенная по типам районов"></svg>
-        <div class="stage-off jsoff">Здесь карта города, раскрашенная по типам районов, дендрограмма и профили кластеров. Нужен браузер со скриптами.</div>
+        <svg id="tymap" viewBox="0 0 800 606" role="img" aria-label="City map coloured by neighbourhood type"></svg>
+        <div class="stage-off jsoff">This is a city map coloured by neighbourhood type, a dendrogram and cluster profiles. Needs a browser with scripts.</div>
         <div class="legend"><span class="mono" id="ty-legend"></span></div>
       </div>
 
       <div class="card" style="margin-top:18px">
-        <p class="rail-title" style="margin-bottom:10px">Дендрограмма и линия разреза</p>
-        <svg id="tydendro" viewBox="0 0 800 210" style="width:100%;height:auto;display:block" role="img" aria-label="Дендрограмма кластеризации районов"></svg>
-        <p class="note" style="margin-top:10px">По горизонтали — районы, по вертикали — z-расстояние, на котором они склеились. Признаки стандартизованы, и шкала — это длина вектора расхождений сразу по всем шести: единица означает суммарное расхождение в одно стандартное отклонение, а не сигму по одному признаку. Чем выше склейка, тем сильнее различаются объединяемые группы. Пунктир — текущий разрез.</p>
+        <p class="rail-title" style="margin-bottom:10px">Dendrogram and cut line</p>
+        <svg id="tydendro" viewBox="0 0 800 210" style="width:100%;height:auto;display:block" role="img" aria-label="Dendrogram of neighbourhood clustering"></svg>
+        <p class="note" style="margin-top:10px">Horizontally — neighbourhoods; vertically — the z-distance at which they merged. The features are standardised, and the scale is the length of the divergence vector across all six at once: one unit means a combined divergence of one standard deviation, not one sigma on a single feature. The higher the merge, the more different the groups being joined. The dashed line is the current cut.</p>
       </div>
 
       <div class="card" style="margin-top:18px">
-        <p class="rail-title" style="margin-bottom:12px">Профили кластеров: отклонение от среднего по городу</p>
+        <p class="rail-title" style="margin-bottom:12px">Cluster profiles: deviation from the city average</p>
         <div class="profgrid" id="ty-profiles"></div>
         <p class="note" style="margin-top:14px">
-          Вправо — выше среднего по городу, влево — ниже. Так читается смысл кластера: «доступность высокая, цена низкая» — это резерв, куда рынок ещё не пришёл;
-          «доступность высокая, цена высокая» — зрелый рынок, где вы покупаете вход дорого.
-          Ровно этот приём применён в разборе Дубая: районы кластеризовали по доступности до моллов, насыщенности точками притяжения и медианной цене, а потом сравнили с картой уже идущих девелоперских проектов — и увидели, что стройка идёт либо в насыщенных зонах, либо на периферии, мимо кластера с ценой ниже и хорошей доступностью.
-          Автор того разбора — <a href="https://telegra.ph/DUBAJ-VYYAVLENIE-PERSPEKTIVNYH-DLYA-DEVELOPMENTA-RAJONOV-06-21" target="_blank" rel="noopener">Елена Скребкова</a>, работа выполнена на курсе пространственного анализа Инессы Трегубовой.
+          Right — above the city average, left — below. That is how you read the meaning of a cluster: “high accessibility, low price” is headroom the market has not reached yet;
+          “high accessibility, high price” is a mature market where you buy in expensive.
+          Exactly this technique was applied in a study of Dubai: neighbourhoods were clustered by accessibility to malls, density of points of attraction and median price, and then compared with a map of development projects already under way — which showed that construction goes either into saturated zones or out to the periphery, missing the cluster with a lower price and good accessibility.
+          The author of that study is <a href="https://telegra.ph/DUBAJ-VYYAVLENIE-PERSPEKTIVNYH-DLYA-DEVELOPMENTA-RAJONOV-06-21" target="_blank" rel="noopener">Elena Skrebkova</a>, the work was done on Inessa Tregubova’s spatial analysis course.
         </p>
       </div>
     </div>
@@ -524,11 +505,11 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
   <div class="calc-wrap">
     <div class="rail">
       <div>
-        <p class="rail-title">Параметры объекта</p>
+        <p class="rail-title">Property parameters</p>
         <div id="calcfields"></div>
       </div>
       <div>
-        <p class="rail-title">Что рядом</p>
+        <p class="rail-title">What is nearby</p>
         <div class="toggles" id="calctoggles"></div>
       </div>
     </div>
@@ -536,24 +517,24 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
       <div class="price-head">
         <div>
           <div class="price-main" id="ppm">—</div>
-          <div class="price-sub">₽ за м² · условный город-миллионник</div>
+          <div class="price-sub">₽ per m² · a generic Russian million-plus city (≈ $2,500 at 83 ₽/$)</div>
         </div>
         <div>
           <div class="price-main" id="ptotal" style="font-size:clamp(22px,3.4vw,32px)">—</div>
-          <div class="price-sub">за объект целиком</div>
+          <div class="price-sub">for the whole property</div>
         </div>
       </div>
-      <p class="rail-title">Вклад факторов в цену метра: таблица Bonus / Malus</p>
-      <p class="note" style="margin:-6px 0 12px">Это SHAP-подобная декомпозиция: базовая цена по городу плюс вклад каждого признака. В оценочной практике такую таблицу называют Bonus/Malus — она переводит вывод модели на язык сравнительного подхода, где оценщик обязан обосновать каждую корректировку, как того требуют стандарты IVS и RICS. Без неё банк, суд и налоговая на цифру из модели не опираются. Метка <span class="geotag">ГЕО</span> — признак, который не спрашивают у продавца, а считают из данных: изохрона по графу улиц, буфер по полигонам OSM, дистанция до промзоны. Наведите на строку — покажу источник признака.</p>
+      <p class="rail-title">Factor contributions to price per m²: the Bonus / Malus table</p>
+      <p class="note" style="margin:-6px 0 12px">This is a SHAP-style decomposition: a city base price plus the contribution of each feature. In valuation practice such a table is called Bonus/Malus — it translates the model output into the language of the sales comparison approach, where the appraiser must justify every adjustment, as the IVS and RICS standards require. Without it a bank, a court and the tax authority will not rely on a number from a model. The <span class="geotag">GEO</span> tag marks a feature that is not asked of the seller but computed from data: an isochrone over the street graph, a buffer over OSM polygons, distance to an industrial zone. Hover over a row — I will show where the feature comes from.</p>
       <div class="wf" id="wf"></div>
       <p class="verdict" id="wf-split"></p>
       <p class="note" style="margin-top:18px">
-        Точка отсчёта 210 000 ₽/м² — это не средняя цена по городу, а значение до применения поправок: от него отсчитываются все строки, поэтому они и складываются в итог ровно.
-        Коэффициенты — порядок величин из публичных исследований, а не оценка вашей квартиры.
-        Эффект метро (+1,5% в пятиминутной доступности и падение дальше 500 м) — из работы КБ Стрелка на выборке 71,2 тыс. московских квартир.
-        Панорамный вид: риелторы «Миэль» оценивали наценку за панорамный вид в Москве в 10–15% — но это оценка 2013 года без опубликованной методики, поэтому здесь заложено консервативные 12%.
-        И то же замечание, что на карте: ползунок «пешком до метро» уходит до 30 минут, а коэффициент измерялся на первых сотнях метров, так что правая половина шкалы — экстраполяция, а не измерение.
-        В рабочей модели такие коэффициенты не проставляются руками — их достают из обученного бустинга через SHAP, и они разные для каждого района. И ещё честная оговорка: вклады здесь считаются последовательно, от накопленной цены, поэтому сумма зависит от порядка строк — настоящий SHAP аддитивен и от порядка не зависит.
+        The reference point of 210,000 ₽/m² (≈ $2,500 at 83 ₽/$) is not the city average price but the value before any adjustments: every row is counted from it, which is why they add up to the total exactly.
+        The coefficients are orders of magnitude from published research, not a valuation of your flat.
+        The metro effect (+1.5% within a five-minute walk, falling away beyond 500 m) comes from the work of KB Strelka on a sample of 71,200 Moscow flats.
+        Panoramic view: the agency Miel valued the premium for a panoramic view in Moscow at 10–15% — but that is a 2013 estimate with no published methodology, so a conservative 12% is used here.
+        And the same remark as on the map: the “walk to metro” slider goes up to 30 minutes, while the coefficient was measured on the first few hundred metres, so the right half of the scale is extrapolation, not measurement.
+        In a production model such coefficients are not entered by hand — they are pulled out of a trained boosting model via SHAP, and they differ for every neighbourhood. And one more honest caveat: contributions here are computed sequentially, off the accumulated price, so the sum depends on row order — real SHAP is additive and order-independent.
       </p>
     </div>
   </div>
@@ -570,59 +551,59 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
   <div class="map-wrap">
     <div class="rail">
       <div>
-        <p class="rail-title">Постановка задачи</p>
+        <p class="rail-title">Problem formulation</p>
         <div class="seg" id="d-mode" style="flex-direction:column">
-          <button data-v="median" aria-pressed="true">p-median · средний подъезд</button>
-          <button data-v="center" aria-pressed="false">p-center · худший подъезд</button>
-          <button data-v="mclp" aria-pressed="false">MCLP · покрытие в нормативе</button>
+          <button data-v="median" aria-pressed="true">p-median · average response</button>
+          <button data-v="center" aria-pressed="false">p-center · worst response</button>
+          <button data-v="mclp" aria-pressed="false">MCLP · coverage within target</button>
         </div>
         <p class="note" style="margin-top:9px" id="d-modenote"></p>
       </div>
       <div>
-        <p class="rail-title">Параметры</p>
+        <p class="rail-title">Parameters</p>
         <div class="slider">
-          <label class="lab" for="d-p"><span>Бригад / баз</span><span class="val" id="d-p-v">4</span></label>
+          <label class="lab" for="d-p"><span>Crews / depots</span><span class="val" id="d-p-v">4</span></label>
           <input type="range" id="d-p" min="1" max="10" value="4">
         </div>
         <div class="slider">
-          <label class="lab" for="d-r"><span>Норматив подъезда</span><span class="val" id="d-r-v">20 мин</span></label>
+          <label class="lab" for="d-r"><span>Response target</span><span class="val" id="d-r-v">20 min</span></label>
           <input type="range" id="d-r" min="5" max="45" value="20">
         </div>
         <div class="toggles" style="margin-top:4px">
-          <label><input type="checkbox" id="d-cap">Выровнять загрузку бригад</label>
-          <label><input type="checkbox" id="d-links" checked>Показывать привязку объектов</label>
+          <label><input type="checkbox" id="d-cap">Balance crew workload</label>
+          <label><input type="checkbox" id="d-links" checked>Show job assignments</label>
         </div>
         <p class="note" style="margin-top:9px" id="d-capnote"></p>
       </div>
       <div>
-        <p class="rail-title">Что получилось</p>
+        <p class="rail-title">What came out</p>
         <div id="d-metrics"></div>
       </div>
     </div>
 
     <div>
       <div class="map-stage">
-        <svg id="dmap" viewBox="0 0 800 606" role="img" aria-label="Карта объектов ремонта и размещённых бригад"></svg>
-        <div class="stage-off jsoff">Здесь карта объектов и бригад: три постановки задачи размещения, ползунки на число бригад и норматив подъезда. Нужен браузер со скриптами.</div>
+        <svg id="dmap" viewBox="0 0 800 606" role="img" aria-label="Map of repair jobs and placed crews"></svg>
+        <div class="stage-off jsoff">This is a map of jobs and crews: three formulations of the location problem, sliders for the number of crews and the response target. Needs a browser with scripts.</div>
         <div class="legend">
           <span class="mono" id="d-legend"></span>
         </div>
       </div>
       <div class="card" style="margin-top:18px">
-        <p class="rail-title" style="margin-bottom:10px">Нагрузка по бригадам</p>
+        <p class="rail-title" style="margin-bottom:10px">Load by crew</p>
         <div id="d-load"></div>
         <p class="note" style="margin-top:14px">
-          Три постановки дают три разных ответа на одной и той же карте. p-median (Hakimi, 1965) минимизирует суммарный взвешенный подъезд — хорош для экономики, но бросает окраины.
-          p-center (Hakimi, 1964) режет худший случай — это про SLA «инженер на объекте за N минут». MCLP (Church, ReVelle, 1974) максимизирует долю объектов внутри норматива при фиксированном числе бригад: он честно признаёт, что покрыть всё бюджета не хватит.
-          Дальше в реальном проекте добавляются ёмкость бригады, квалификации и маршрут снабжения на день — то есть VRP с временными окнами.
+          Three formulations give three different answers on one and the same map. p-median (Hakimi, 1965) minimises total weighted travel time — good for the economics, but it abandons the outskirts.
+          p-center (Hakimi, 1964) cuts the worst case — that is about an SLA of “an engineer on site within N minutes”. MCLP (Church, ReVelle, 1974) maximises the share of jobs within the target for a fixed number of crews: it honestly admits that the budget will not cover everything.
+          In a real project you then add crew capacity, skills and the daily supply route — that is, a VRP with time windows.
         </p>
         <p class="note" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line2)">
-          <b>Та же математика в городской реновации.</b> Закон о статусе столицы (ст. 7.3) требует предоставить равнозначное жильё
-          в том же районе Москвы — исключение только для Зеленоградского, Троицкого и Новомосковского округов, там в границах округа.
-          Плюс организационная схема программы: стартовая площадка → переселение → снос → следующий дом на освободившемся месте.
-          Получается задача о назначении с расписанием: какие кварталы раскрывать первыми, какая площадка обслуживает какие дома,
-          как уложить сводный график в годовой лимит ввода. Цена решения — срок программы, объём временного жилья и число людей,
-          которых всё-таки пришлось увезти из своего района.
+          <b>The same maths in urban redevelopment.</b> Moscow’s renovation programme rehouses residents of ageing low-rise blocks into newly built ones, and it runs on the same constraint. The Law on the Status of the Capital (art. 7.3) requires that equivalent housing be provided
+          in the same district of Moscow — the only exception is the Zelenogradsky, Troitsky and Novomoskovsky okrugs, where it is within the okrug.
+          Add the programme’s operating scheme: starter site → resettlement → demolition → the next building on the freed-up land.
+          What you get is an assignment problem with a schedule: which blocks to open first, which site serves which buildings,
+          how to fit the master timeline into the annual completion cap. The price of the solution is the duration of the programme, the volume of temporary housing and the number of people
+          who had to be moved out of their own neighbourhood after all.
         </p>
       </div>
     </div>
@@ -631,74 +612,74 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
 
 <!-- ============ TAB 5 ============ -->
 <section class="panel" id="p-cv" role="tabpanel" aria-labelledby="t-cv" hidden>
-  <p class="lede" style="margin:0 0 22px">Кухня, которая стоит за первыми тремя вкладками: как сырые снимки и координаты превращаются в модель, и на чём эта модель чаще всего врёт.</p>
-  <p class="rail-title">Пайплайн: от снимка до решения</p>
+  <p class="lede" style="margin:0 0 22px">The kitchen behind the first three tabs: how raw imagery and coordinates turn into a model, and where that model most often lies.</p>
+  <p class="rail-title">Pipeline: from imagery to decision</p>
   <div class="pipe" id="pipe"></div>
 
   <div class="map-wrap" style="margin-top:30px">
     <div class="rail">
       <div>
-        <p class="rail-title">Утечка через географию</p>
-        <p class="note">Классическая ловушка гео-ML. Если разбить выборку случайно, квартиры одного дома попадут и в обучение, и в тест — модель заучит цену дома, а не закономерность. Покрутите разброс между домами и посмотрите, как расходятся метрики.</p>
+        <p class="rail-title">Leakage through geography</p>
+        <p class="note">The classic geo-ML trap. If you split the sample at random, flats from the same building land in both training and test — the model memorises the price of the building, not the pattern. Turn the between-building spread and watch the metrics diverge.</p>
       </div>
       <div>
-        <p class="rail-title">Параметры эксперимента</p>
+        <p class="rail-title">Experiment parameters</p>
         <div class="slider">
-          <label class="lab" for="cv-sigma"><span>Разброс между домами</span><span class="val" id="cv-sigma-v">10%</span></label>
+          <label class="lab" for="cv-sigma"><span>Between-building spread</span><span class="val" id="cv-sigma-v">10%</span></label>
           <input type="range" id="cv-sigma" min="0" max="22" value="10">
         </div>
         <div class="slider">
-          <label class="lab" for="cv-k"><span>Соседей в kNN</span><span class="val" id="cv-k-v">5</span></label>
+          <label class="lab" for="cv-k"><span>Neighbours in kNN</span><span class="val" id="cv-k-v">5</span></label>
           <input type="range" id="cv-k" min="1" max="15" value="5">
         </div>
         <div class="seg" id="cv-view" style="flex-direction:column">
-          <button data-v="random" aria-pressed="true">Случайный сплит</button>
-          <button data-v="spatial" aria-pressed="false">Сплит по домам</button>
-          <button data-v="blkpt" aria-pressed="false">Блоки карты, по точкам</button>
-          <button data-v="blkbld" aria-pressed="false">Блоки карты, по домам</button>
+          <button data-v="random" aria-pressed="true">Random split</button>
+          <button data-v="spatial" aria-pressed="false">Split by building</button>
+          <button data-v="blkpt" aria-pressed="false">Map blocks, by points</button>
+          <button data-v="blkbld" aria-pressed="false">Map blocks, by buildings</button>
         </div>
       </div>
       <div>
-        <p class="rail-title">Результат</p>
+        <p class="rail-title">Result</p>
         <div id="cv-metrics"></div>
       </div>
     </div>
 
     <div>
       <div class="map-stage">
-        <svg id="cvmap" viewBox="0 0 800 400" role="img" aria-label="Карта объявлений с разбиением на обучающую и тестовую выборки"></svg>
-        <div class="stage-off jsoff">Здесь демо утечки через географию: 468 объявлений в 26 домах и четыре способа разбить выборку. Нужен браузер со скриптами.</div>
+        <svg id="cvmap" viewBox="0 0 800 400" role="img" aria-label="Map of listings split into training and test samples"></svg>
+        <div class="stage-off jsoff">This is a demo of leakage through geography: 468 listings in 26 buildings and four ways to split the sample. Needs a browser with scripts.</div>
         <div class="legend"><span class="mono" id="cv-legend"></span></div>
       </div>
       <div class="card" style="margin-top:18px">
         <p class="note" style="margin:0">
-          Что делают ползунки. <b>Разброс между домами</b> задаёт, насколько дома отличаются друг от друга при прочих равных: на нуле цвет по карте меняется плавно, на максимуме каждый дом становится отдельным пятном — и именно это пятно потом утекает через случайный сплит. <b>Соседей в kNN</b> меняет число линий у выбранной точки: щёлкните по любой тестовой точке, чтобы посмотреть, откуда модель берёт свой ответ. В случайном сплите соседи оказываются в том же доме, в сплите по домам — приходится тянуться в чужие. Радиус тестовой точки — её ошибка предсказания.
+          What the sliders do. <b>Between-building spread</b> sets how much buildings differ from one another, all else equal: at zero the colour changes smoothly across the map, at maximum every building becomes a separate blob — and it is that blob that later leaks through a random split. <b>Neighbours in kNN</b> changes the number of lines from the selected point: click any test point to see where the model gets its answer from. In a random split the neighbours turn out to be in the same building; in a split by building it has to reach into other ones. The radius of a test point is its prediction error.
           <br><br>
-          Модель одна и та же — kNN по координатам, то есть ровно то, чем по факту работает любой бустинг с гео-признаками.
-          Меняется только способ разбиения выборки. При случайном сплите у каждой тестовой квартиры соседи по обучению стоят в том же подъезде, и модель просто копирует их цену: MAPE выглядит прекрасно.
-          Сплит по домам увозит в тест дом целиком — и остаётся честная ошибка на объекте, который модель раньше не видела. Поставьте разброс между домами в ноль: разрыв схлопнется с семи с лишним раз до двух-трёх, но в ноль не уйдёт — это и есть неустранимая ошибка интерполяции на незнакомой территории.
-          В проде это Spatial K-Fold: в фолд целиком уезжает дом или кластер DBSCAN. Блоки карты — следующий шаг, если модель поедет в незнакомый район. Только «нарезать блоками» — ещё не значит «проверить строго»: ниже посчитано, что даёт каждая из четырёх нарезок и где в них ловушка.
+          The model is one and the same — kNN on coordinates, that is, exactly what any boosting model with geo-features effectively does.
+          Only the way the sample is split changes. With a random split every test flat has training neighbours on the same stairwell, and the model simply copies their price: MAPE looks wonderful.
+          A split by building moves an entire building into the test — and what is left is the honest error on a property the model has never seen. Set the between-building spread to zero: the gap collapses from over seven times to two or three, but it never reaches zero — this is the irreducible interpolation error on unfamiliar territory.
+          In production this is Spatial K-Fold: an entire building or a DBSCAN cluster goes into a fold. Map blocks are the next step, if the model is going to travel to an unfamiliar district. Only “cutting into blocks” does not yet mean “validating strictly”: below is a count of what each of the four schemes actually gives you, and where the trap is in them.
         </p>
         <p class="note" style="margin:14px 0 0">
-          Ещё две проверки, которые экономят месяцы. Первая — линейный бейзлайн: в разборе рынка Кальяри на 1153 объявлениях нейросеть выиграла по метрикам, но отрыв от обычной линейной регрессии оказался мал, и авторы прямо пишут, что нелинейные модели не дали большого преимущества. Прежде чем защищать бюджет на бустинг, посчитайте, сколько он реально отыгрывает у регрессии.
-          Вторая — пропуски. Незаполненные поля в объявлении не выбрасывают и не заполняют средним, а кодируют отдельной категорией «не указано»: умолчание продавца коррелирует с сегментом рынка. Если человек не написал состояние ремонта — это тоже признак.
+          Two more checks that save months. First — a linear baseline: in a study of the Cagliari market on 1,153 listings a neural network won on metrics, but the margin over ordinary linear regression turned out to be small, and the authors state plainly that non-linear models gave no large advantage. Before defending a budget for boosting, count how much it actually wins back over regression.
+          Second — missing values. Empty fields in a listing are not dropped and not filled with the mean, but coded as a separate category “not specified”: what the seller leaves out correlates with the market segment. If someone did not write in the state of the renovation — that is a feature too.
         </p>
       </div>
     </div>
   </div>
 
   <div style="margin-top:34px">
-    <p class="rail-title">Четыре нарезки фолдов — и почему «блоками» само по себе ничего не гарантирует</p>
+    <p class="rail-title">Four fold-cutting schemes — and why “in blocks” on its own guarantees nothing</p>
     <p class="note" style="max-width:80ch;margin:0 0 16px">
-      Здесь та же модель и те же 468 объявлений, но полная кросс-валидация: каждая точка ровно один раз оказывается в тесте, поэтому произвольный выбор «вот этот кусок отложим» из результата убран. Ползунки выше действуют и на эту таблицу — покрутите разброс между домами и посмотрите, как меняется порядок строк. Кнопки слева от карты показывают любую из четырёх нарезок на самой карте.
+      Here it is the same model and the same 468 listings, but full cross-validation: every point lands in the test exactly once, so the arbitrary choice of “let us hold out this piece” is removed from the result. The sliders above act on this table too — turn the between-building spread and watch the row order change. The buttons to the left of the map show any of the four schemes on the map itself.
     </p>
     <div class="splits" id="cv-splits"></div>
     <div class="card" style="margin-top:16px">
       <p class="note" id="cv-splits-verdict" style="margin:0"></p>
       <p class="note" style="margin:12px 0 0">
-        Сетка блоков у второй и третьей строки одна и та же — 4 × 2 на всю карту, восемь фолдов. Разница между ними в одном: куда относить дом, которому граница блока прошла по двору. При нарезке по точкам часть его квартир уезжает в тест, а часть остаётся в обучении, и у тестовых снова появляется сосед из своего же дома — тот самый механизм, которым обманывает случайный сплит, просто в меньшем масштабе. При нарезке по домам блок собирается из целых домов, и утечки нет: у первой строки соседей из своего дома почти пять из пяти, у второй уже около одного, у двух последних ровно ноль.
+        The block grid in the second and third rows is the same — 4 × 2 over the whole map, eight folds. The difference between them is one thing: where to assign a building whose courtyard the block border ran through. With the cut by points, some of its flats go to the test and some stay in training, and the test ones again get a neighbour from their own building — the very mechanism a random split cheats with, just at a smaller scale. With the cut by buildings a block is assembled from whole buildings, and there is no leakage: in the first row it is almost five neighbours out of five from the flat’s own building, in the second about one, in the last two exactly zero.
         <br><br>
-        А вот сравнивать блоки с leave-one-building-out по принципу «что строже» бессмысленно, и это стоило мне переписанного абзаца в статье. Порядок двух последних строк меняется вместе с разбросом между домами, потому что промах складывается из двух разных вещей: из того, что модель не знает собственной надбавки нового дома, и из того, что она не знает, как устроена цена в этой части карты. Блок отодвигает соседей вдвое дальше и увеличивает вторую составляющую, но первая при этом чуть уменьшается, и в сумме они частично гасят друг друга — цифры в выводе выше пересчитываются на каждом положении ползунка. Так что нарезку выбирают не по фольклору, а под тот риск, который страшен: незнакомый дом в знакомом районе или незнакомый район целиком. Единственное, что не зависит ни от чего, — счётчик соседей из своей группы. Если он не ноль, проверка мерит не то, что вы думаете.
+        But comparing blocks with leave-one-building-out on a “which is stricter” basis is meaningless, and this cost me a rewritten paragraph in the article. The order of the last two rows changes together with the between-building spread, because the miss is made up of two different things: the model not knowing the building’s own premium, and it not knowing how price works in this part of the map. A block pushes the neighbours twice as far away and increases the second component, but the first one shrinks slightly, and in sum they partly cancel each other out — the figures in the verdict above are recomputed at every slider position. So you choose the scheme not by folklore but for the risk that actually scares you: an unfamiliar building in a familiar district, or an unfamiliar district as a whole. The one thing that does not depend on anything is the counter of neighbours from a flat’s own group. If it is not zero, the validation is measuring something other than what you think.
       </p>
     </div>
   </div>
@@ -706,15 +687,15 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
 
 <footer>
   <div class="fcol">
-    <span>Карты — синтетический город, модели демонстрационные.</span>
-    <span>Кейсы и коэффициенты — из публичных источников, ссылка есть на каждой карточке.</span>
+    <span>The maps are a synthetic city; the models are for demonstration.</span>
+    <span>Cases and coefficients come from public sources, with a link on every card.</span>
   </div>
   <div class="signature">
-    <a class="brand" href="https://t.me/URBAN_MASH" target="_blank" rel="noopener" aria-label="Телеграм-канал Urban Mash">
+    <a class="brand" href="https://t.me/URBAN_MASH" target="_blank" rel="noopener" aria-label="Urban Mash Telegram channel">
       <img class="brand-mark" width="52" height="52" alt="" src="data:image/png;base64,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">
       <span class="brand-txt"><b>Urban&nbsp;Mash</b><i>t.me/URBAN_MASH</i></span>
     </a>
-    <span class="who">Мария Эрцеговац
+    <span class="who">Marija Ercegovac
       <a href="https://www.linkedin.com/in/marija-ercegovac/" target="_blank" rel="noopener">linkedin.com/in/marija-ercegovac&nbsp;↗</a>
     </span>
   </div>
@@ -726,7 +707,7 @@ footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--ink);font-siz
 /* ================= utils ================= */
 const $ = s => document.querySelector(s);
 const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
-const fmt = n => new Intl.NumberFormat('ru-RU').format(Math.round(n));
+const fmt = n => new Intl.NumberFormat('en-US').format(Math.round(n));
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const rnd = mulberry32(20260810);
 
@@ -799,8 +780,8 @@ norm('fCentre',h=>-h.dCity);
 norm('fPoi',h=>h.poi);
 norm('fEnv',h=>-(Math.min(h.dPark,h.dRiver*1.35)+h.indPress*260));
 norm('fNiche',h=>-h.comp);
-/* престиж района: ожидания рынка, не сводимые к доступности.
-   Именно он создаёт разрыв между «хорошо расположено» и «дорого стоит». */
+/* neighbourhood prestige: market expectations that do not reduce to accessibility.
+   It is what creates the gap between “well located” and “expensive”. */
 hexes.forEach(h=>h.prestRaw=Math.exp(-Math.pow(h.dRiver/95,2))+.85*Math.exp(-Math.pow(h.dPark/120,2)));
 norm('fPrest',h=>h.prestRaw);
 hexes.forEach(h=>h.land=.28*h.fCentre+.15*h.fTransport+.07*h.fPoi+.50*h.fPrest);
@@ -809,32 +790,32 @@ hexes.forEach((h,i)=>h.id='H-'+String(1000+i));
 
 /* ================= factors & weights ================= */
 const FACTORS=[
-  {k:'fTransport',n:'Транспорт (метро)',w:85},
-  {k:'fCentre',n:'Центральность',w:45},
-  {k:'fPoi',n:'Инфраструктура и POI',w:65},
-  {k:'fEnv',n:'Среда: зелень, вода',w:60},
-  {k:'fNiche',n:'Свободная ниша',w:40},
-  {k:'fCheap',n:'Дешёвый вход',w:55}
+  {k:'fTransport',n:'Transport (metro)',w:85},
+  {k:'fCentre',n:'Centrality',w:45},
+  {k:'fPoi',n:'Infrastructure and POI',w:65},
+  {k:'fEnv',n:'Environment: greenery, water',w:60},
+  {k:'fNiche',n:'Open niche',w:40},
+  {k:'fCheap',n:'Cheap entry',w:55}
 ];
 const PRESETS=[
-  {n:'Жильё комфорт',w:[85,45,65,60,40,55]},
-  {n:'Стрит-ритейл',w:[70,60,90,15,85,35]},
-  {n:'Инвест-участок',w:[60,35,30,45,30,90]}
+  {n:'Comfort housing',w:[85,45,65,60,40,55]},
+  {n:'Street retail',w:[70,60,90,15,85,35]},
+  {n:'Investment plot',w:[60,35,30,45,30,90]}
 ];
-const LAYERS=[['metro','метро'],['parks','парки'],['ind','промзоны'],['rivals','конкуренты'],['river','река'],['limits','ограничения застройки']];
+const LAYERS=[['metro','metro'],['parks','parks'],['ind','industrial'],['rivals','competitors'],['river','river'],['limits','building restrictions']];
 const layerOn={metro:true,parks:true,ind:true,rivals:true,river:true,limits:true};
 
-/* ограничения застройки: приаэродромная территория и водоохранная полоса */
+/* building restrictions: airport approach area and water protection strip */
 const restricted=[
-  {x:250,y:300,r:108,n:'зона охраны объектов культурного наследия'},
-  {x:78,y:108,r:92,n:'приаэродромная территория'}
+  {x:250,y:300,r:108,n:'cultural heritage protection zone'},
+  {x:78,y:108,r:92,n:'airport approach area'}
 ];
 const RIVER_BUF=21;
 hexes.forEach(h=>{
   const z=restricted.find(z=>dist(h.x,h.y,z.x,z.y)<z.r);
   const wat=Math.abs(h.y-riverY(h.x))<RIVER_BUF;
   h.banned=!!z||wat;
-  h.banReason=z?z.n:wat?'водоохранная зона':'';
+  h.banReason=z?z.n:wat?'water protection zone':'';
   h.dInd=industry.reduce((m,p)=>Math.min(m,Math.max(0,dist(h.x,h.y,p.x,p.y)-p.r)),1e9);
 });
 
@@ -901,33 +882,33 @@ function drawOverlays(){
   }
 }
 
-/* ================= вклад локации в цену ================= */
-/* 1 px карты ≈ 15,4 м (ячейка ~400 м поперёк), пешеход 83 м/мин.
-   DETOUR — коэффициент извилистости: расстояние по прямой умножается на 1,35,
-   потому что в браузере графа улиц нет. В рабочей модели здесь стоит изохрона OSRM. */
-/* GEO_REF — не «средняя цена по городу» и вообще не цена реальной ячейки, а точка
-   отсчёта: значение до применения любых поправок. Все строки водопада — отклонения
-   от неё, поэтому они складываются в итог ровно. А содержательный ноль на карте —
-   медиана города, она считается ниже из самих ячеек.
-   DETOUR применяется только к пешей доступности: коэффициент −1,1% за километр до
-   центра в гедонических моделях считают по прямой или по дороге, домножать его
-   на извилистость пешеходных маршрутов нельзя. */
+/* ================= location premium in price ================= */
+/* 1 px of the map ≈ 15.4 m (cell ~400 m across), pedestrian 83 m/min.
+   DETOUR is the circuity factor: straight-line distance is multiplied by 1.35,
+   because there is no street graph in the browser. In a production model an OSRM isochrone goes here. */
+/* GEO_REF is not “the city average price”, and not the price of a real cell at all, but a
+   reference point: the value before any adjustments are applied. Every waterfall row is a deviation
+   from it, which is why they add up to the total exactly. The meaningful zero on the map is
+   the city median, computed below from the cells themselves.
+   DETOUR applies only to walking accessibility: the −1.1% per kilometre to the centre
+   coefficient in hedonic models is measured straight-line or by road, and multiplying it
+   by the circuity of pedestrian routes is not allowed. */
 const PX2M=15.4, GEO_REF=210000, DETOUR=1.35, WALK_MEASURED=20;
 const geoWalk=m=>m<=7?.015:Math.max(-.18,.015-(m-7)*.0095);
 function geoParts(h){
   const walkMin=h.dMetro*PX2M*DETOUR/83, km=h.dCity*PX2M/1000;
   const rows=[
-    {n:'Метро: ~'+walkMin.toFixed(0)+' мин пешком'+(walkMin>WALK_MEASURED?' · экстраполяция':''),pct:geoWalk(walkMin)},
-    {n:'До центра: '+km.toFixed(1)+' км',pct:Math.max(-.24,-.011*km)},
-    {n:'Парк в 500 м',pct:h.dPark*PX2M<500?.045:0},
-    {n:'Промзона ближе 1 км',pct:h.dInd*PX2M<1000?-.07:0}
+    {n:'Metro: ~'+walkMin.toFixed(0)+' min walk'+(walkMin>WALK_MEASURED?' · extrapolation':''),pct:geoWalk(walkMin)},
+    {n:'To the centre: '+km.toFixed(1)+' km',pct:Math.max(-.24,-.011*km)},
+    {n:'Park within 500 m',pct:h.dPark*PX2M<500?.045:0},
+    {n:'Industrial zone within 1 km',pct:h.dInd*PX2M<1000?-.07:0}
   ];
   let cur=GEO_REF; const out=[];
   rows.forEach(r=>{const d=cur*r.pct;out.push({n:r.n,d});cur+=d});
   return {rows:out,ppm:cur,ref:GEO_REF};
 }
 hexes.forEach(h=>{h.geo=geoParts(h)});
-/* медиана цены по городу — нейтральная точка расходящейся шкалы */
+/* city median price — the neutral point of the diverging scale */
 const GEO_MED=(()=>{const v=hexes.map(h=>h.geo.ppm).sort((a,b)=>a-b);return v[Math.floor(v.length/2)]})();
 hexes.forEach(h=>{h.geo.delta=h.geo.ppm-GEO_MED});
 const EXTRAP=hexes.filter(h=>h.dMetro*PX2M*DETOUR/83>WALK_MEASURED).length;
@@ -941,8 +922,8 @@ function score(h){
 }
 let mapMode='score';
 const MAPNOTE={
-  score:'Взвешенная оценка площадки по вашим весам. Ищем, где строить.',
-  shap:'Тот же город, но окрашен ценой метра, собранной только из геопризнаков. Нейтральный цвет — медиана города: половина ячеек дороже, половина дешевле.'
+  score:'A weighted site score by your weights. We are looking for where to build.',
+  shap:'The same city, but coloured by price per m² assembled from geo-features only. Neutral colour is the city median: half the cells are more expensive, half cheaper.'
 };
 function repaint(){
   const sc=hexes.map(h=>mapMode==='shap'?h.geo.delta:score(h));
@@ -968,22 +949,22 @@ function repaint(){
     li.appendChild(b);top.appendChild(li);
   });
   const banned=hexes.filter(h=>h.banned).length;
-  if($('#extrap-n'))$('#extrap-n').textContent=EXTRAP+' из '+hexes.length;
-  $('#hexcount').textContent=hexes.length+' ячеек'+(layerOn.limits?' · '+banned+' под ограничениями':'');
+  if($('#extrap-n'))$('#extrap-n').textContent=EXTRAP+' of '+hexes.length;
+  $('#hexcount').textContent=hexes.length+' cells'+(layerOn.limits?' · '+banned+' under restrictions':'');
   const naive=[...hexes].sort((a,b)=>b.s-a.s).slice(0,10).filter(h=>h.banned).length;
   $('#limwarn').innerHTML=layerOn.limits
-    ? (naive?'Без слоя ограничений <b>'+naive+' из 10</b> лучших площадок пришлось бы выбросить уже на юридической проверке — они попадают в зону охраны наследия, приаэродромную территорию или водоохранную полосу.'
-            :'Сейчас в первой десятке нет площадок под ограничениями — но '+banned+' ячеек города закрыты для застройки, и без этого слоя скоринг рано или поздно приведёт вас в одну из них.')
-    : 'Слой ограничений выключен: в рейтинг попадают в том числе ячейки, где строить нельзя.';
-  $('#top5title').textContent=mapMode==='shap'?'Топ-5 по цене метра':'Топ-5 площадок';
+    ? (naive?'Without the restrictions layer <b>'+naive+' of the 10</b> best sites would have to be thrown out at the legal check already — they fall into a heritage protection zone, an airport approach area or a water protection strip.'
+            :'Right now there are no restricted sites in the top ten — but '+banned+' cells of the city are closed to construction, and without this layer the scoring will sooner or later walk you into one of them.')
+    : 'The restrictions layer is off: the ranking includes cells where building is not allowed.';
+  $('#top5title').textContent=mapMode==='shap'?'Top 5 by price per m²':'Top 5 sites';
   if(mapMode==='shap'){
     $('#ramp-lo').textContent=fmt(GEO_MED+mn)+' ₽';
     $('#ramp-hi').textContent=fmt(GEO_MED+mx)+' ₽';
     const zero=Math.max(2,Math.min(98,(0-mn)/((mx-mn)||1)*100)).toFixed(1);
     $('#ramp-bar').style.background='linear-gradient(90deg,rgb(31,91,107) 0%,rgb(233,228,210) '+zero+'%,rgb(178,58,23) 100%)';
-    $('#ramp-bar').title='Нейтральный цвет — медиана города, '+fmt(GEO_MED)+' ₽/м²';
+    $('#ramp-bar').title='Neutral colour is the city median, '+fmt(GEO_MED)+' ₽/m²';
   } else {
-    $('#ramp-lo').textContent='слабо'; $('#ramp-hi').textContent='сильно';
+    $('#ramp-lo').textContent='weak'; $('#ramp-hi').textContent='strong';
     $('#ramp-bar').style.background='linear-gradient(90deg,#1F5B6B,#7BA39B,#E0D3A2,#E8642B)';
     $('#ramp-bar').title='';
   }
@@ -994,16 +975,16 @@ function select(h){selected=h;repaint()}
 function renderCell(h){
   $('#cellscore').textContent=mapMode==='shap'?fmt(h.geo.ppm):h.s100;
   $('#cellid').innerHTML=h.id+(mapMode==='shap'
-      ?' · ₽/м² · к медиане '+(h.geo.delta>0?'+':'')+fmt(h.geo.delta)
-      :' · земля '+(20+Math.round(h.land*95))+' у.е./м²')
-    +(layerOn.limits&&h.banned?' <span class="badge">СТРОИТЬ НЕЛЬЗЯ: '+h.banReason.toUpperCase()+'</span>':'');
+      ?' · ₽/m² · vs median '+(h.geo.delta>0?'+':'')+fmt(h.geo.delta)
+      :' · land '+(20+Math.round(h.land*95))+' c.u./m²')
+    +(layerOn.limits&&h.banned?' <span class="badge">CANNOT BUILD: '+h.banReason.toUpperCase()+'</span>':'');
   if(mapMode==='shap'){
     $('#cellbars').innerHTML=
-      '<div class="money-row"><span>Точка отсчёта: все поправки нулевые</span><span class="m">'+fmt(h.geo.ref)+'</span></div>'
+      '<div class="money-row"><span>Reference point: all adjustments zero</span><span class="m">'+fmt(h.geo.ref)+'</span></div>'
       +h.geo.rows.map(r=>
       '<div class="money-row"><span>'+r.n+'</span><span class="m '+(r.d>0?'pos':r.d<0?'neg':'')+'">'+(r.d>0?'+':'')+fmt(r.d)+'</span></div>').join('')
-      +'<div class="money-row tot"><span>Цена метра в этой ячейке</span><span class="m">'+fmt(h.geo.ppm)+'</span></div>'
-      +'<div class="money-row"><span>Медиана по городу</span><span class="m">'+fmt(GEO_MED)+'</span></div>';
+      +'<div class="money-row tot"><span>Price per m² in this cell</span><span class="m">'+fmt(h.geo.ppm)+'</span></div>'
+      +'<div class="money-row"><span>City median</span><span class="m">'+fmt(GEO_MED)+'</span></div>';
     return;
   }
   const tw=FACTORS.reduce((s,f)=>s+f.w,0)||1;
@@ -1063,34 +1044,34 @@ drawOverlays();repaint();
 const BASE=210000;
 const C={walk:6,km:9,area:56,floor:'mid',lifts:2,reno:'none',park:true,view:false,ind:false,landmark:false};
 $('#calcfields').innerHTML=`
-  <div class="field"><label class="lab" for="c-walk"><span>Пешком до метро</span><span class="val" id="c-walk-v">6 мин</span></label><input type="range" id="c-walk" min="1" max="30" value="6"></div>
-  <div class="field"><label class="lab" for="c-km"><span>До центра</span><span class="val" id="c-km-v">9 км</span></label><input type="range" id="c-km" min="0" max="22" value="9"></div>
-  <div class="field"><label class="lab" for="c-area"><span>Площадь</span><span class="val" id="c-area-v">56 м²</span></label><input type="range" id="c-area" min="20" max="140" value="56"></div>
-  <div class="field"><div class="lab"><span>Этаж</span></div><div class="seg" id="c-floor">
-    <button data-v="first" aria-pressed="false">первый</button><button data-v="mid" aria-pressed="true">средний</button><button data-v="last" aria-pressed="false">последний</button></div></div>
-  <div class="field"><div class="lab"><span>Лифтов в доме</span></div><div class="seg" id="c-lifts">
+  <div class="field"><label class="lab" for="c-walk"><span>Walk to metro</span><span class="val" id="c-walk-v">6 min</span></label><input type="range" id="c-walk" min="1" max="30" value="6"></div>
+  <div class="field"><label class="lab" for="c-km"><span>To the centre</span><span class="val" id="c-km-v">9 km</span></label><input type="range" id="c-km" min="0" max="22" value="9"></div>
+  <div class="field"><label class="lab" for="c-area"><span>Floor area</span><span class="val" id="c-area-v">56 m²</span></label><input type="range" id="c-area" min="20" max="140" value="56"></div>
+  <div class="field"><div class="lab"><span>Floor</span></div><div class="seg" id="c-floor">
+    <button data-v="first" aria-pressed="false">first</button><button data-v="mid" aria-pressed="true">middle</button><button data-v="last" aria-pressed="false">last</button></div></div>
+  <div class="field"><div class="lab"><span>Lifts in the building</span></div><div class="seg" id="c-lifts">
     <button data-v="1" aria-pressed="false">1</button><button data-v="2" aria-pressed="true">2</button><button data-v="3" aria-pressed="false">3+</button></div></div>
-  <div class="field"><div class="lab"><span>Состояние</span></div><div class="seg" id="c-reno">
-    <button data-v="none" aria-pressed="true">без ремонта</button><button data-v="cosm" aria-pressed="false">косметика</button><button data-v="design" aria-pressed="false">дизайнерский</button></div></div>`;
+  <div class="field"><div class="lab"><span>Condition</span></div><div class="seg" id="c-reno">
+    <button data-v="none" aria-pressed="true">unrenovated</button><button data-v="cosm" aria-pressed="false">cosmetic</button><button data-v="design" aria-pressed="false">designer</button></div></div>`;
 $('#calctoggles').innerHTML=`
-  <label><input type="checkbox" id="c-park" checked>Парк в 500 м</label>
-  <label><input type="checkbox" id="c-view">Панорамный вид из окон</label>
-  <label><input type="checkbox" id="c-landmark">Достопримечательности в 1 км</label>
-  <label><input type="checkbox" id="c-ind">Промзона ближе 1 км</label>`;
+  <label><input type="checkbox" id="c-park" checked>Park within 500 m</label>
+  <label><input type="checkbox" id="c-view">Panoramic view from the windows</label>
+  <label><input type="checkbox" id="c-landmark">Landmarks within 1 km</label>
+  <label><input type="checkbox" id="c-ind">Industrial zone within 1 km</label>`;
 
 function walkEffect(m){ return m<=7 ? .015 : Math.max(-.18, .015-(m-7)*.0095); }
 function calc(){
   const rows=[];
   const push=(n,pct,geo,src)=>rows.push({n,pct,geo,src});
-  push(C.walk<=7?'Метро в пятиминутной доступности':'Метро: '+C.walk+' мин пешком', walkEffect(C.walk),1,'изохрона по графу улиц, OSRM');
-  push('Удалённость от центра: '+C.km+' км', Math.max(-.24,-.011*C.km),1,'дистанция до делового ядра');
-  push('Парк в 500 м', C.park?.045:0,1,'буфер 500 м по полигонам OSM');
-  push('Панорамный вид', C.view?.12:0,1,'анализ видимости по модели рельефа и застройки');
-  push('Культурная среда в 1 км', C.landmark?.09:0,1,'плотность POI в ячейке сетки');
-  push('Промзона ближе 1 км', C.ind?-.07:0,1,'дистанция до полигонов промзон');
-  push('Этаж', C.floor==='first'?-.08:C.floor==='last'?-.03:0,0,'карточка объекта');
-  push('Лифты', C.lifts===1?-.015:C.lifts===3?.03:0,0,'карточка дома');
-  push('Состояние', C.reno==='none'?-.06:C.reno==='design'?.07:0,0,'карточка объекта');
+  push(C.walk<=7?'Metro within a five-minute walk':'Metro: '+C.walk+' min walk', walkEffect(C.walk),1,'isochrone over the street graph, OSRM');
+  push('Distance from the centre: '+C.km+' km', Math.max(-.24,-.011*C.km),1,'distance to the business core');
+  push('Park within 500 m', C.park?.045:0,1,'500 m buffer over OSM polygons');
+  push('Panoramic view', C.view?.12:0,1,'viewshed analysis over terrain and building models');
+  push('Cultural amenities within 1 km', C.landmark?.09:0,1,'POI density in the grid cell');
+  push('Industrial zone within 1 km', C.ind?-.07:0,1,'distance to industrial zone polygons');
+  push('Floor', C.floor==='first'?-.08:C.floor==='last'?-.03:0,0,'property record');
+  push('Lifts', C.lifts===1?-.015:C.lifts===3?.03:0,0,'building record');
+  push('Condition', C.reno==='none'?-.06:C.reno==='design'?.07:0,0,'property record');
   let cur=BASE; const out=[];
   rows.forEach(r=>{const d=cur*r.pct;out.push(Object.assign({},r,{d}));cur+=d});
   return {rows:out,ppm:cur};
@@ -1098,29 +1079,29 @@ function calc(){
 function renderCalc(){
   const {rows,ppm}=calc();
   $('#ppm').textContent=fmt(ppm);
-  $('#ptotal').textContent=(Math.round(ppm*C.area/1e5)/10).toFixed(1)+' млн ₽';
+  $('#ptotal').textContent=(Math.round(ppm*C.area/1e5)/10).toFixed(1)+' mln ₽';
   const geoSum=rows.filter(r=>r.geo).reduce((s,r)=>s+r.d,0);
   const objSum=rows.filter(r=>!r.geo).reduce((s,r)=>s+r.d,0);
   const mx=Math.max(...rows.map(r=>Math.abs(r.d)),1);
   $('#wf').innerHTML=
-    `<div class="wf-row base"><span>Точка отсчёта: все поправки нулевые</span><span class="wf-track"></span><span class="amt">${fmt(BASE)}</span></div>`+
+    `<div class="wf-row base"><span>Reference point: all adjustments zero</span><span class="wf-track"></span><span class="amt">${fmt(BASE)}</span></div>`+
     rows.map(r=>{
       const w=Math.abs(r.d)/mx*48;
       const style=r.d>=0?`left:50%;width:${w}%;background:#1E7A4B`:`right:50%;width:${w}%;background:#B23A17`;
-      return `<div class="wf-row"><span title="${r.src}">${r.n}<span class="geotag${r.geo?'':' obj'}">${r.geo?'ГЕО':'ОБЪЕКТ'}</span></span>
+      return `<div class="wf-row"><span title="${r.src}">${r.n}<span class="geotag${r.geo?'':' obj'}">${r.geo?'GEO':'ASSET'}</span></span>
       <span class="wf-track"><i style="${style}"></i></span>
       <span class="amt ${r.d>0?'pos':r.d<0?'neg':''}">${r.d>0?'+':''}${fmt(r.d)}</span></div>`;
     }).join('')+
-    `<div class="wf-row total"><span>Итог, ₽/м²</span><span class="wf-track"></span><span class="amt">${fmt(ppm)}</span></div>`;
+    `<div class="wf-row total"><span>Total, ₽/m²</span><span class="wf-track"></span><span class="amt">${fmt(ppm)}</span></div>`;
   $('#wf-split').innerHTML=(Math.round(objSum)===0
-    ? 'Отклонение от базы целиком набрано геопризнаками: <b>'+fmt(geoSum)+' ₽/м²</b>. Свойства самого объекта на текущих настройках нейтральны — покрутите этаж, лифты и состояние.'
-    : 'Из отклонения от базы <b>'+fmt(geoSum)+' ₽/м²</b> дают признаки, посчитанные из геоданных, и <b>'+fmt(objSum)+' ₽/м²</b> — свойства самого объекта.');
+    ? 'The deviation from base is made up entirely of geo-features: <b>'+fmt(geoSum)+' ₽/m²</b>. The properties of the asset itself are neutral at the current settings — try the floor, the lifts and the condition.'
+    : 'Of the deviation from base, <b>'+fmt(geoSum)+' ₽/m²</b> comes from features computed from geodata, and <b>'+fmt(objSum)+' ₽/m²</b> from properties of the asset itself.');
 }
 ['walk','km','area'].forEach(k=>{
   const inp=document.getElementById('c-'+k);
   inp.addEventListener('input',e=>{
     C[k]=+e.target.value;
-    document.getElementById('c-'+k+'-v').textContent=C[k]+(k==='walk'?' мин':k==='km'?' км':' м²');
+    document.getElementById('c-'+k+'-v').textContent=C[k]+(k==='walk'?' min':k==='km'?' km':' m²');
     renderCalc();
   });
 });
@@ -1139,34 +1120,34 @@ renderCalc();
 
 /* ================= tab 3: cases ================= */
 const CASES=[
-  {g:'Оценка',num:'Bonus / Malus',t:'RE-VAL, Кальяри',d:'Saiu и Mocci, Urban Science, 4 июня 2026. Фреймворк предлагает денормализовывать SHAP-вклады обратно в деньги и сводить их в таблицу надбавок и скидок по признакам — чтобы вывод модели лёг в логику сравнительного подхода IVS и RICS, где оценщик обязан документировать каждую корректировку. Ровно то, что делает вкладка «Цена метра». Две оговорки: заполненной денежной таблицы в самой публикации нет, это заявленный механизм; и считалось на ценах предложения, а не сделок, — авторы отдельно оговаривают, что такие цены отражают начальные ожидания продавцов и могут расходиться с итоговой ценой сделки.',u:'https://www.mdpi.com/2413-8851/10/6/315'},
-  {g:'Оценка',num:'≈ линейной',t:'Точность решает не всё',d:'В том же исследовании 1153 объявлений сравнили пять моделей. Лучшие агрегированные метрики у нейросети, но отрыв от линейной регрессии и случайного леса мал — авторы прямо пишут, что нелинейные модели не дали большого преимущества. Градиентный бустинг LightGBM по точности вообще не дотянул до тройки лидеров, хотя структура его объяснений одна из самых сбалансированных. Вывод авторов — Random Forest как лучший баланс точности и интерпретируемости, а SVR не попала ни в сильные по точности, ни по объяснениям: там всё схлопнулось к площади и энергоклассу, что делает её менее пригодной, когда интерпретируемость — обязательное требование.',u:'https://www.mdpi.com/2413-8851/10/6/315'},
-  {g:'Провалы',num:'−$421,6 млн',bad:1,t:'Zillow Offers',d:'Убыток сегмента Homes до налогов за III квартал 2021 года — в том же пресс-релизе объявлено о закрытии Zillow Offers. По подсчёту издания Insider, из 224 домов, которые Zillow держала выставленными на продажу в агломерации Финикса на 27 октября 2021 года, 208 (почти 93%) стояли ниже цены покупки.',u:'https://www.sec.gov/Archives/edgar/data/1617640/000161764021000085/q32021991.htm',
-   max:7.01,bars:[{l:'Медианная ошибка Zestimate, дома вне продажи',v:7.01,txt:'7,01%',bad:1},{l:'То же по выставленным в продажу',v:1.83,txt:'1,83%'}]},
-  {g:'Продукт',num:'3 ML-модели',t:'VK Predict «Девелопер»',d:'Считает оптимальную квартирографию и цену каждого лота при заданных темпах продаж. Внутри — гравитационные модели потоков и модель Хаффа для зон влияния.',u:'https://habr.com/ru/companies/vk/articles/734102/',
-   max:12,bars:[{l:'Окно обучения с минимальной ошибкой',v:4,txt:'4 мес'},{l:'Интерпретируемых real-time моделей',v:3,txt:'3 модели',mute:1}]},
-  {g:'Продукт',num:'адрес + м²',t:'Домклик, оценка жилья',d:'ML сравнивает объект с похожими актуальными объявлениями и реальными ипотечными сделками Сбера за последние три месяца. Отдельно в сервисе краткосрочной аренды «Домклик24» есть прогноз стоимости на 6 месяцев вперёд. Состояние на апрель 2025 года.',u:'https://realty.ria.ru/20250425/domklik-2013373418.html',
-   max:6,bars:[{l:'Глубина сделок для сравнения',v:3,txt:'3 мес назад'},{l:'Прогноз в «Домклик24» (краткосрочная аренда)',v:6,txt:'6 мес вперёд'}]},
-  {g:'Продукт',num:'>60 тыс./мес',t:'Циан, модерация объявлений',d:'Данные Циан за 2021 год: ежемесячно на модерацию попадает более 60 тыс. объявлений с видимыми нарушениями и около 100 тыс. со скрытыми, подтверждается более 60% выявленных. Привлекательные фотографии при заниженной цене — типичный приём мошеннического объявления.',u:'https://realty.rbc.ru/news/602fba579a7947f8fe388d22',
-   max:100,bars:[{l:'Видимые нарушения, в месяц',v:60,txt:'>60 тыс.',bad:1},{l:'Скрытые нарушения, в месяц',v:100,txt:'~100 тыс.',bad:1}]},
-  {g:'Земля',num:'~17 млн',t:'Росреестр, «Умный кадастр»',d:'Нейросеть распознаёт контуры объектов со снимков БПЛА и сверяет их с ЕГРН. Оценка Росреестра, декабрь 2021: примерно столько объектов можно внести в реестр и вовлечь в оборот.',u:'https://rosreestr.gov.ru/press/archive/rosreestr-predstavil-servis-umnyy-kadastr-dlya-napolneniya-egrn-aktualnymi-dannymi-i-zashchity-imushch/',
-   max:17,bars:[{l:'Объектов к внесению в ЕГРН',v:17,txt:'17 млн'}]},
-  {g:'Риск',num:'7,5 млн',t:'Cape Analytics (Moody\u2019s)',d:'Состояние кровли и наличие бассейна — прямо с аэрофото, без выезда оценщика. По данным компании (2019 год), бассейнов распознано больше 7,5 млн по континентальным США, почти 3 млн из них — Флорида и Калифорния. В январе 2025 года Moody\u2019s объявила о покупке Cape Analytics.',u:'https://capeanalytics.com/resources/cape-analytics-introduces-automated-pool-detection-from-geospatial-imagery-for-use-by-property-insurers/',
-   max:7.5,bars:[{l:'Бассейнов распознано в США',v:7.5,txt:'>7,5 млн'},{l:'Из них Флорида и Калифорния',v:3,txt:'~3 млн'}]},
-  {g:'Коммерция',num:'$1,3 млрд',t:'Placer.ai + Webster Bank',d:'Данные о трафике и демографии дают и подбор площадки с оценкой каннибализации, и риск-индекс уже собранного портфеля: банк мониторит на них портфель торговой недвижимости целиком.',u:'https://www.placer.ai/resources/library/case-studies',
-   max:1.3,bars:[{l:'Портфель ритейла под мониторингом',v:1.3,txt:'$1,3 млрд'}]},
-  {g:'Коэффициенты',num:'+1,5%',t:'КБ Стрелка: метро и жильё',d:'Исследование Центра городской экономики «КБ Стрелка» на выборке 71,2 тыс. московских квартир (2% всех квартир города): близость метро удорожает жильё всего на полтора процента, а при удалении более чем на 500 м цена начинает падать. По изложению РБК, февраль 2017.',u:'https://realty.rbc.ru/news/5892e7be9a79470dece29c7f',
-   max:101.5,bars:[{l:'Цена без метро рядом',v:100,txt:'100%',mute:1},{l:'С метро в пределах 500 м',v:101.5,txt:'101,5%'}]},
-  {g:'Коэффициенты',num:'−38%',bad:1,t:'Офисы: минуты от метро',d:'Замеры Times Estate по офисам в Москве: каждые пять минут пешком от метро стоят арендатору 150–300 тыс. ₽ в месяц. К тридцатой минуте ставка ниже почти на 40% — в жилье эффект метро на порядок слабее.',u:'https://moskvichmag.ru/gorod/kazhdye-5-minut-ot-metro-snizhayut-arendu-ofisa-v-moskve-na-150-300-tysyach-rublej/',
-   max:100,bars:[{l:'5 минут пешком',v:100,txt:'1,43 млн ₽/мес',mute:1},{l:'10 минут',v:80,txt:'1,14 млн ₽ · −20%'},{l:'30 минут',v:62,txt:'885 тыс. ₽ · −38%',bad:1}]},
-  {g:'Диспатч',num:'~1,5 млн',t:'Дубай как открытый датасет',d:'DLD выкладывает регистрационные данные на портал Dubai Pulse. Датасет транзакций охватывает все типы сделок — купля-продажа, ипотека, наследование, объединение и разделение объектов — начиная с начала 2000-х; счётчик записей портал не публикует, оценки на 2025–2026 годы дают 1,5–1,7 млн строк, объём растёт ежедневно. Отдельный датасет договоров аренды Ejari — порядка 4 млн записей. Для сравнения: только за 2025 год DLD зарегистрировал 1,38 млн договоров аренды.',u:'https://www.dubaipulse.gov.ae/data/dld-transactions/dld_transactions-open',
-   max:4,bars:[{l:'Записей в датасете транзакций',v:1.6,txt:'~1,5–1,7 млн'},{l:'Договоры аренды Ejari',v:4,txt:'~4 млн'}]},
-  {g:'Диспатч',num:'54,4 тыс.',t:'Дубай: где нужен ремонт',d:'На рынке жилья Дубая в 2025 году прошло 200,8 тыс. сделок купли-продажи: 54,4 тыс. по готовому жилью и 146,4 тыс. off-plan, то есть off-plan — 72,9% по количеству сделок (расчёт Cavendish Maxwell / Property Monitor по данным DLD). На готовое жильё остаётся около 27% — меньшая часть рынка, но всё равно десятки тысяч адресов в год под скоринг лидов.',u:'https://cavendishmaxwell.com/insights/market-reports/residential/dubai-residential-market-performance-fy-2025',
-   max:100,bars:[{l:'Off-plan, доля сделок 2025',v:72.9,txt:'72,9% · 146 400',mute:1},{l:'Готовое жильё, вторичка',v:27.1,txt:'27,1% · 54 400'}]}
+  {g:'Valuation',num:'Bonus / Malus',t:'RE-VAL, Cagliari',d:'Saiu and Mocci, Urban Science, 4 June 2026. The framework proposes denormalising SHAP contributions back into money and collecting them into a table of bonuses and discounts by feature — so that the model output fits the logic of the IVS and RICS sales comparison approach, where the appraiser must document every adjustment. Exactly what the “Price per m²” tab does. Two caveats: there is no filled-in monetary table in the publication itself, this is a declared mechanism; and it was computed on asking prices rather than transactions — the authors separately note that such prices reflect sellers’ initial expectations and may diverge from the final transaction price.',u:'https://www.mdpi.com/2413-8851/10/6/315'},
+  {g:'Valuation',num:'≈ linear',t:'Accuracy is not everything',d:'In the same study five models were compared on 1,153 listings. The best aggregate metrics belong to the neural network, but the margin over linear regression and random forest is small — the authors state plainly that non-linear models gave no large advantage. LightGBM gradient boosting did not even make the top three on accuracy, although the structure of its explanations is among the most balanced. The authors conclude that Random Forest gives the best balance of accuracy and interpretability, while SVR made neither the accuracy nor the explanation shortlist: everything there collapsed onto floor area and energy class, which makes it less suitable when interpretability is a hard requirement.',u:'https://www.mdpi.com/2413-8851/10/6/315'},
+  {g:'Failures',num:'−$421.6 mln',bad:1,t:'Zillow Offers',d:'Pre-tax loss of the Homes segment for Q3 2021 — the same press release announced the shutdown of Zillow Offers. By Insider’s count, of the 224 homes Zillow had listed for sale in the Phoenix metro area as of 27 October 2021, 208 (almost 93%) were priced below the purchase price.',u:'https://www.sec.gov/Archives/edgar/data/1617640/000161764021000085/q32021991.htm',
+   max:7.01,bars:[{l:'Median Zestimate error, off-market homes',v:7.01,txt:'7,01%',bad:1},{l:'Same, for homes listed for sale',v:1.83,txt:'1,83%'}]},
+  {g:'Product',num:'3 ML models',t:'VK Predict “Developer”',d:'Computes the optimal unit mix and the price of every lot at a given sales pace. Inside are gravity models of flows and a Huff model for catchment areas.',u:'https://habr.com/ru/companies/vk/articles/734102/',
+   max:12,bars:[{l:'Training window with minimum error',v:4,txt:'4 months'},{l:'Interpretable real-time models',v:3,txt:'3 models',mute:1}]},
+  {g:'Product',num:'address + m²',t:'Domclick, home valuation',d:'ML compares a property with similar live listings and with real Sberbank mortgage transactions from the last three months. Separately, the short-term rental service “Domclick24” carries a six-month price forecast. As of April 2025.',u:'https://realty.ria.ru/20250425/domklik-2013373418.html',
+   max:6,bars:[{l:'Transaction depth for comparison',v:3,txt:'3 months back'},{l:'Forecast in “Domclick24” (short-term rental)',v:6,txt:'6 months ahead'}]},
+  {g:'Product',num:'>60k / month',t:'Cian, listing moderation',d:'Cian data for 2021: every month more than 60 thousand listings with visible violations and about 100 thousand with hidden ones go to moderation; over 60% of the flagged ones are confirmed. Attractive photos at an understated price are a classic move in a fraudulent listing.',u:'https://realty.rbc.ru/news/602fba579a7947f8fe388d22',
+   max:100,bars:[{l:'Visible violations, per month',v:60,txt:'>60k',bad:1},{l:'Hidden violations, per month',v:100,txt:'~100k',bad:1}]},
+  {g:'Land',num:'~17 mln',t:'Rosreestr, “Smart Cadastre”',d:'A neural network recognises object outlines from drone imagery and checks them against the state property register. Estimate by Rosreestr, the Russian land registry, December 2021: roughly that many objects could be entered into the register and brought into circulation.',u:'https://rosreestr.gov.ru/press/archive/rosreestr-predstavil-servis-umnyy-kadastr-dlya-napolneniya-egrn-aktualnymi-dannymi-i-zashchity-imushch/',
+   max:17,bars:[{l:'Objects to be entered into the register',v:17,txt:'17 mln'}]},
+  {g:'Risk',num:'7.5 mln',t:'Cape Analytics (Moody\u2019s)',d:'Roof condition and the presence of a pool — straight from aerial imagery, with no appraiser visiting the site. Per the company (2019), more than 7.5 million pools were detected across the continental US, almost 3 million of them in Florida and California. In January 2025 Moody\u2019s announced the acquisition of Cape Analytics.',u:'https://capeanalytics.com/resources/cape-analytics-introduces-automated-pool-detection-from-geospatial-imagery-for-use-by-property-insurers/',
+   max:7.5,bars:[{l:'Pools detected in the US',v:7.5,txt:'>7.5 mln'},{l:'Of those, Florida and California',v:3,txt:'~3 mln'}]},
+  {g:'Commerce',num:'$1.3 bln',t:'Placer.ai + Webster Bank',d:'Footfall and demographics data give both site selection with a cannibalisation estimate and a risk index for a portfolio already assembled: the bank uses them to monitor its entire retail property portfolio.',u:'https://www.placer.ai/resources/library/case-studies',
+   max:1.3,bars:[{l:'Retail portfolio under monitoring',v:1.3,txt:'$1.3 bln'}]},
+  {g:'Coefficients',num:'+1,5%',t:'KB Strelka: metro and housing',d:'A study by the Centre for Urban Economics at KB Strelka, a Moscow urban planning consultancy, on a sample of 71,200 Moscow flats (2% of all flats in the city): proximity to the metro raises the price of housing by just one and a half per cent, and beyond 500 m the price starts to fall. As reported by RBC, February 2017.',u:'https://realty.rbc.ru/news/5892e7be9a79470dece29c7f',
+   max:101.5,bars:[{l:'Price with no metro nearby',v:100,txt:'100%',mute:1},{l:'With metro within 500 m',v:101.5,txt:'101,5%'}]},
+  {g:'Coefficients',num:'−38%',bad:1,t:'Offices: minutes from the metro',d:'Measurements by Times Estate on Moscow offices: every five minutes of walking from the metro costs the tenant 150–300 thousand ₽ a month (roughly $1,800–3,600). By the thirtieth minute the rent is almost 40% lower — in housing the metro effect is an order of magnitude weaker.',u:'https://moskvichmag.ru/gorod/kazhdye-5-minut-ot-metro-snizhayut-arendu-ofisa-v-moskve-na-150-300-tysyach-rublej/',
+   max:100,bars:[{l:'5 minutes on foot',v:100,txt:'1.43 mln ₽/month',mute:1},{l:'10 minutes',v:80,txt:'1.14 mln ₽ · −20%'},{l:'30 minutes',v:62,txt:'885k ₽ · −38%',bad:1}]},
+  {g:'Dispatch',num:'~1.5 mln',t:'Dubai as an open dataset',d:'DLD publishes registration data on the Dubai Pulse portal. The transactions dataset covers every deal type — sale, mortgage, inheritance, consolidation and splitting of properties — from the early 2000s onwards; the portal does not publish a record count, and estimates for 2025–2026 put it at 1.5–1.7 million rows, growing daily. A separate Ejari tenancy contracts dataset holds around 4 million records. For scale: in 2025 alone DLD registered 1.38 million tenancy contracts.',u:'https://www.dubaipulse.gov.ae/data/dld-transactions/dld_transactions-open',
+   max:4,bars:[{l:'Records in the transactions dataset',v:1.6,txt:'~1.5–1.7 mln'},{l:'Ejari tenancy contracts',v:4,txt:'~4 mln'}]},
+  {g:'Dispatch',num:'54.4k',t:'Dubai: where repairs are needed',d:'Dubai’s residential market saw 200,800 sale transactions in 2025: 54,400 for ready housing and 146,400 off-plan, i.e. off-plan is 72.9% by deal count (Cavendish Maxwell / Property Monitor calculation on DLD data). Ready housing accounts for about 27% — the smaller part of the market, but still tens of thousands of addresses a year to score as leads.',u:'https://cavendishmaxwell.com/insights/market-reports/residential/dubai-residential-market-performance-fy-2025',
+   max:100,bars:[{l:'Off-plan, share of deals 2025',v:72.9,txt:'72,9% · 146 400',mute:1},{l:'Ready housing, resale',v:27.1,txt:'27,1% · 54 400'}]}
 ];
-const GROUPS=['Все',...[...new Set(CASES.map(c=>c.g))]];
-let activeG='Все';
-$('#casefilters').innerHTML=GROUPS.map(g=>`<button data-g="${g}" aria-pressed="${g==='Все'}">${g}</button>`).join('');
+const GROUPS=['All',...[...new Set(CASES.map(c=>c.g))]];
+let activeG='All';
+$('#casefilters').innerHTML=GROUPS.map(g=>`<button data-g="${g}" aria-pressed="${g==='All'}">${g}</button>`).join('');
 function caseViz(c){
   if(!c.bars)return '';
   return '<div class="cviz">'+c.bars.map(b=>
@@ -1175,17 +1156,17 @@ function caseViz(c){
     (b.bad?'#B23A17':b.mute?'#B6C0B4':'#6C2BD9')+'"></i></div></div>').join('')+'</div>';
 }
 function renderCases(){
-  $('#cases').innerHTML=CASES.filter(c=>activeG==='Все'||c.g===activeG).map(c=>`
+  $('#cases').innerHTML=CASES.filter(c=>activeG==='All'||c.g===activeG).map(c=>`
     <article class="case">
       <span class="tag">${c.g}</span>
       <span class="num${c.bad?' bad':''}">${c.num}</span>
       <h3>${c.t}</h3>
       ${caseViz(c)}
       <p>${c.d}</p>
-      <a href="${c.u}" target="_blank" rel="noopener">источник →</a>
+      <a href="${c.u}" target="_blank" rel="noopener">source →</a>
     </article>`).join('');
 }
-/* фильтры по группам: без этого обработчика кнопки рисовались, но ничего не делали */
+/* group filters: without this handler the buttons rendered but did nothing */
 document.querySelectorAll('#casefilters button').forEach(b=>{
   b.type='button';
   b.addEventListener('click',()=>{
@@ -1213,9 +1194,9 @@ const D=jobs.map(j=>cands.map(c=>Math.hypot(j.x-c.x,j.y-c.y)*PX2MIN));
 
 const DS={p:4,R:20,mode:'median',cap:false,links:true};
 const MODENOTE={
-  median:'Минимизируем суммарное взвешенное время подъезда. Дешевле всего в среднем — окраины страдают.',
-  center:'Минимизируем самый долгий подъезд. Постановка под жёсткое SLA, платите за хвост.',
-  mclp:'Максимизируем долю объектов внутри норматива. Признаём, что покрыть всё бюджета не хватит.'
+  median:'We minimise total weighted travel time. Cheapest on average — the outskirts suffer.',
+  center:'We minimise the longest response. A formulation for a hard SLA; you pay for the tail.',
+  mclp:'We maximise the share of jobs within the target. We admit that the budget will not cover everything.'
 };
 function objective(open){
   if(DS.mode==='mclp'){
@@ -1313,24 +1294,24 @@ function renderDispatch(){
     g.appendChild(el('rect',{x:p.x-3,y:p.y-3,width:6,height:6,fill:baseColor(k)}));
   });
 
-  $('#d-legend').textContent=jobs.length+' объектов · '+open.length+' баз · норматив '+DS.R+' мин';
+  $('#d-legend').textContent=jobs.length+' jobs · '+open.length+' depots · target '+DS.R+' min';
   const load=open.map((c,k)=>({k,n:jobs.filter((j,i)=>asg[i]===c).length,w:jobs.reduce((s,j,i)=>s+(asg[i]===c?j.w:0),0)}));
   const wmin=Math.min(...load.map(l=>l.w)), wmax=Math.max(...load.map(l=>l.w));
   const capVal=Math.ceil(wsum/open.length);
   $('#d-metrics').innerHTML=
-    '<div class="metric"><span>Средний подъезд</span><b>'+avg.toFixed(1)+' мин</b></div>'+
-    '<div class="metric '+(worst>DS.R?'bad':'good')+'"><span>Худший подъезд</span><b>'+worst.toFixed(1)+' мин</b></div>'+
-    '<div class="metric '+(covered>=90?'good':covered<70?'bad':'')+'"><span>В нормативе</span><b>'+covered.toFixed(0)+'%</b></div>'+
-    '<div class="metric '+(wmax>wmin*1.8?'bad':'')+'"><span>Загрузка бригад, ед.</span><b>'+wmin+'–'+wmax+'</b></div>'+
-    '<div class="metric"><span>Часов в пути на 100 выездов</span><b>'+(avg*100/60).toFixed(1)+' ч</b></div>';
+    '<div class="metric"><span>Average response</span><b>'+avg.toFixed(1)+' min</b></div>'+
+    '<div class="metric '+(worst>DS.R?'bad':'good')+'"><span>Worst response</span><b>'+worst.toFixed(1)+' min</b></div>'+
+    '<div class="metric '+(covered>=90?'good':covered<70?'bad':'')+'"><span>Within target</span><b>'+covered.toFixed(0)+'%</b></div>'+
+    '<div class="metric '+(wmax>wmin*1.8?'bad':'')+'"><span>Crew load, units</span><b>'+wmin+'–'+wmax+'</b></div>'+
+    '<div class="metric"><span>Hours on the road per 100 call-outs</span><b>'+(avg*100/60).toFixed(1)+' h</b></div>';
   $('#d-capnote').innerHTML=DS.cap
-    ? 'Включено. Потолок бригады = общий объём ÷ число бригад = <b>'+capVal+' ед.</b> Объекты разбираются в порядке убывания «сожаления» — разницы во времени между ближайшей базой и следующей: кто больше теряет от переброски, выбирает первым. Загрузка выравнивается, но платит за это не только средний подъезд: смотрите, как уезжает <b>худший</b> и падает покрытие в нормативе.'
-    : 'Выключено. Каждый объект едет к ближайшей базе, ёмкость не проверяется. Подъезд минимальный, но одна бригада может собрать втрое больше работы, чем соседняя.';
+    ? 'On. Crew ceiling = total volume ÷ number of crews = <b>'+capVal+' units.</b> Jobs are taken in descending order of “regret” — the difference in time between the nearest depot and the next one: whoever loses more from being reassigned picks first. The load evens out, but it is not only the average response that pays for it: watch how the <b>worst</b> one runs away and coverage within target falls.'
+    : 'Off. Every job goes to the nearest depot, capacity is not checked. Travel is minimal, but one crew can end up with three times more work than its neighbour.';
   const mxl=Math.max(...load.map(l=>l.w),1);
   $('#d-load').innerHTML=load.map(l=>
     '<div class="loadbar"><span class="sw" style="background:'+baseColor(l.k)+'"></span>'+
     '<span class="tr"><i style="width:'+(l.w/mxl*100).toFixed(0)+'%;background:'+baseColor(l.k)+'"></i></span>'+
-    '<span class="n">'+l.n+' об. · '+l.w+' ед.</span></div>').join('');
+    '<span class="n">'+l.n+' jobs · '+l.w+' units.</span></div>').join('');
   $('#d-modenote').textContent=MODENOTE[DS.mode];
 }
 document.querySelectorAll('#d-mode button').forEach(b=>b.addEventListener('click',()=>{
@@ -1338,19 +1319,19 @@ document.querySelectorAll('#d-mode button').forEach(b=>b.addEventListener('click
   b.setAttribute('aria-pressed','true');DS.mode=b.dataset.v;renderDispatch();
 }));
 $('#d-p').addEventListener('input',e=>{DS.p=+e.target.value;$('#d-p-v').textContent=DS.p;renderDispatch()});
-$('#d-r').addEventListener('input',e=>{DS.R=+e.target.value;$('#d-r-v').textContent=DS.R+' мин';renderDispatch()});
+$('#d-r').addEventListener('input',e=>{DS.R=+e.target.value;$('#d-r-v').textContent=DS.R+' min';renderDispatch()});
 $('#d-cap').addEventListener('change',e=>{DS.cap=e.target.checked;renderDispatch()});
 $('#d-links').addEventListener('change',e=>{DS.links=e.target.checked;renderDispatch()});
 renderDispatch();
 
 /* ================= tab 5: pipeline + spatial CV ================= */
 const PIPE=[
-  {n:'01',h:'Сырьё',p:'Ортофото и БПЛА, OSM/Overpass, Overture Maps, выгрузки сделок и объявлений'},
-  {n:'02',h:'Хранение',p:'PostgreSQL + PostGIS: spatial join на миллионах полигонов не живёт в памяти'},
-  {n:'03',h:'Дискретизация',p:'H3 или S2 вместо сырых координат, изохроны по графу через OSRM или Valhalla'},
-  {n:'04',h:'Признаки',p:'GeoPandas для геометрий, PySAL для пространственного лага и автокорреляции'},
-  {n:'05',h:'Обучение',p:'Сначала линейный бейзлайн, потом CatBoost — и обязательно Spatial K-Fold: дом или кластер целиком в фолд'},
-  {n:'06',h:'Объяснение',p:'SHAP: почему модель срезала цену из-за промзоны в километре — иначе бизнес не подпишет решение'}
+  {n:'01',h:'Raw data',p:'Orthophotos and drone imagery, OSM/Overpass, Overture Maps, transaction and listing exports'},
+  {n:'02',h:'Storage',p:'PostgreSQL + PostGIS: a spatial join on millions of polygons does not live in memory'},
+  {n:'03',h:'Discretisation',p:'H3 or S2 instead of raw coordinates, graph isochrones via OSRM or Valhalla'},
+  {n:'04',h:'Features',p:'GeoPandas for geometry, PySAL for spatial lag and autocorrelation'},
+  {n:'05',h:'Training',p:'A linear baseline first, then CatBoost — and Spatial K-Fold without fail: a whole building or cluster into a fold'},
+  {n:'06',h:'Explanation',p:'SHAP: why the model cut the price because of an industrial zone a kilometre away — otherwise the business will not sign off on the decision'}
 ];
 $('#pipe').innerHTML=PIPE.map(s=>'<div class="step"><span class="n">'+s.n+'</span><h4>'+s.h+'</h4><p>'+s.p+'</p></div>').join('');
 
@@ -1372,10 +1353,10 @@ blds.forEach((b,bi)=>{
   }
 });
 const HOLDB=[1,5,9,13,17,21,25];
-/* сетка блоков карты 4 × 2 — восемь фолдов для блочной кросс-валидации.
-   bpt — блок по координатам самой квартиры, bbld — блок по центру её дома.
-   Разница между этими двумя способами и есть вся разница между строгой
-   проверкой и той, которая ей только кажется. */
+/* the 4 × 2 map block grid — eight folds for block cross-validation.
+   bpt is the block by the coordinates of the flat itself, bbld the block by the centre of its building.
+   The difference between these two ways is the whole difference between strict
+   validation and validation that only looks strict. */
 const CVG={BX:4,BY:2,X0:10,X1:790,Y0:10,Y1:390,show:[2,5]};
 const CVBW=(CVG.X1-CVG.X0)/CVG.BX, CVBH=(CVG.Y1-CVG.Y0)/CVG.BY;
 const blockOf=(x,y)=>clamp(Math.floor((y-CVG.Y0)/CVBH),0,CVG.BY-1)*CVG.BX
@@ -1386,11 +1367,11 @@ flats.forEach(f=>{
   f.fold4=Math.min(3,Math.floor(f.u*4));
   f.bpt=blockOf(f.x,f.y);
   f.bbld=blockOf(blds[f.b].x,blds[f.b].y);
-  f.blkPt=CVG.show.includes(f.bpt);   /* что показываем на карте: блоки 2 и 5 */
+  f.blkPt=CVG.show.includes(f.bpt);   /* what we show on the map: blocks 2 and 5 */
   f.blkBld=CVG.show.includes(f.bbld);
 });
-/* дома, которые граница блока разрезала пополам — по всей сетке и отдельно
-   среди показанных на карте блоков */
+/* buildings cut in half by a block border — across the whole grid and separately
+   among the blocks shown on the map */
 const CUTALL=blds.filter((b,bi)=>
   new Set(flats.filter(f=>f.b===bi).map(f=>f.bpt)).size>1).length;
 const CUTSHOW=blds.map((b,bi)=>{
@@ -1401,8 +1382,8 @@ const CV={sigma:.10,k:5,view:'random',sel:null};
 const VKEY={random:'rndTest',spatial:'spTest',blkpt:'blkPt',blkbld:'blkBld'};
 function priceOf(f){return f.base*(1+blds[f.b].e*CV.sigma)*(1+f.noise)}
 
-/* один проход считает и метрику, и то, что нужно карте:
-   ошибку по каждой тестовой точке и её k ближайших соседей из обучающей выборки */
+/* one pass computes both the metric and what the map needs:
+   the error on every test point and its k nearest neighbours from the training sample */
 function evalSplit(key){
   const train=flats.filter(f=>!f[key]), test=flats.filter(f=>f[key]);
   const err=new Map(), nb=new Map();
@@ -1417,7 +1398,7 @@ function evalSplit(key){
   return {mape:s/test.length*100, err, nb, train, test};
 }
 
-/* фиксированные границы цветовой шкалы: считаны по предельному разбросу 22% */
+/* fixed bounds for the colour scale: read off the maximum spread of 22% */
 const CV_SMAX=.22;
 const P_LO=Math.min(...flats.map(f=>f.base*(1-Math.abs(blds[f.b].e)*CV_SMAX)*(1+f.noise)));
 const P_HI=Math.max(...flats.map(f=>f.base*(1+Math.abs(blds[f.b].e)*CV_SMAX)*(1+f.noise)));
@@ -1429,7 +1410,7 @@ function renderCV(){
   const key=VKEY[CV.view]||'rndTest';
   const A=key==='rndTest'?R:(key==='spTest'?S:evalSplit(key));
 
-  /* выбранная точка должна принадлежать текущей тестовой выборке */
+  /* the selected point must belong to the current test sample */
   if(!CV.sel||!CV.sel[key]){
     CV.sel=A.test.reduce((b,f)=>{
       const d=Math.hypot(f.x-400,f.y-200);
@@ -1437,10 +1418,10 @@ function renderCV(){
     },null).f;
   }
 
-  /* цвет = цена по ФИКСИРОВАННОЙ шкале: если пересчитывать min/max под каждый
-     разброс, шкала сама себя компенсирует и картинка не меняется. Границы взяты
-     по максимально возможному разбросу, поэтому на нуле город — узкая полоса
-     близких оттенков, а на максимуме каждый дом становится отдельным пятном */
+  /* colour = price on a FIXED scale: if min/max are recomputed for every
+     spread, the scale compensates for itself and the picture does not change. The bounds are taken
+     from the maximum possible spread, so at zero the city is a narrow band of
+     close shades, and at maximum every building becomes a separate blob */
   const pcol=f=>ramp((priceOf(f)-P_LO)/(P_HI-P_LO));
 
   cvsvg.innerHTML='';
@@ -1450,7 +1431,7 @@ function renderCV(){
       fill:'#6C2BD9',opacity:.10,stroke:'#6C2BD9','stroke-width':1.2,'stroke-dasharray':'4 3'})));
   }
   if(CV.view==='blkpt'||CV.view==='blkbld'){
-    /* закрашиваем отложенные блоки, потом рисуем всю сетку */
+    /* fill the held-out blocks, then draw the whole grid */
     CVG.show.forEach(k=>g.appendChild(el('rect',{
       x:CVG.X0+(k%CVG.BX)*CVBW, y:CVG.Y0+Math.floor(k/CVG.BX)*CVBH,
       width:CVBW, height:CVBH, fill:'#6C2BD9', opacity:.09})));
@@ -1461,7 +1442,7 @@ function renderCV(){
       x1:CVG.X0,y1:CVG.Y0+by*CVBH,x2:CVG.X1,y2:CVG.Y0+by*CVBH,
       stroke:'#57655C','stroke-width':1,'stroke-dasharray':'5 4',opacity:.75}));
     if(CV.view==='blkpt'){
-      /* дома, разрезанные границей: их половина осталась в обучении */
+      /* buildings cut by a border: half of each stayed in training */
       CUTSHOW.forEach(bi=>g.appendChild(el('circle',{cx:blds[bi].x,cy:blds[bi].y,r:22,
         fill:'none',stroke:'#E8642B','stroke-width':2,'stroke-dasharray':'3 3'})));
     }else{
@@ -1470,17 +1451,17 @@ function renderCV(){
           fill:'none',stroke:'#6C2BD9','stroke-width':1.4,'stroke-dasharray':'4 3'})));
     }
   }
-  /* связи выбранной точки с её k соседями по обучающей выборке — так виден смысл ползунка k */
+  /* links from the selected point to its k neighbours in the training sample — this is where the meaning of the k slider shows */
   (A.nb.get(CV.sel)||[]).forEach(r=>{
     g.appendChild(el('line',{x1:CV.sel.x,y1:CV.sel.y,x2:r.x,y2:r.y,
       stroke:'#17231D','stroke-width':1,opacity:.45}));
     g.appendChild(el('circle',{cx:r.x,cy:r.y,r:4.6,fill:'none',stroke:'#17231D','stroke-width':1.3}));
   });
-  /* обучающая выборка */
+  /* training sample */
   flats.filter(f=>!f[key]).forEach(f=>{
     g.appendChild(el('circle',{cx:f.x,cy:f.y,r:2.6,fill:pcol(f),opacity:.85}));
   });
-  /* тестовая: радиус растёт с ошибкой предсказания */
+  /* test: the radius grows with prediction error */
   A.test.forEach(f=>{
     const e=A.err.get(f)||0;
     const c=el('circle',{cx:f.x,cy:f.y,r:(3+Math.min(1,e/.25)*5.5).toFixed(1),fill:pcol(f),
@@ -1491,37 +1472,37 @@ function renderCV(){
 
   const es=(A.err.get(CV.sel)*100).toFixed(1);
   const same=(A.nb.get(CV.sel)||[]).filter(r=>r.b===CV.sel.b).length;
-  const vnote=CV.view==='blkpt'?' · сетка 4 × 2, отложены блоки 2 и 5, границей разрезано домов: '+CUTSHOW.length
-             :CV.view==='blkbld'?' · те же блоки, но собранные из целых домов'
+  const vnote=CV.view==='blkpt'?' · grid 4 × 2, blocks 2 and 5 held out, buildings cut by a border: '+CUTSHOW.length
+             :CV.view==='blkbld'?' · the same blocks, but assembled from whole buildings'
              :'';
-  $('#cv-legend').textContent=flats.length+' объявлений в '+blds.length+' домах · цвет — цена, радиус тестовой точки — её ошибка'+vnote+' · '
-    +'у выбранной точки '+same+' из '+CV.k+' соседей в её же доме, ошибка '+es+'%';
+  $('#cv-legend').textContent=flats.length+' listings in '+blds.length+' buildings · colour is price, the radius of a test point is its error'+vnote+' · '
+    +'the selected point has '+same+' of '+CV.k+' neighbours in its own building, error '+es+'%';
 
   const ratio=mR>0?(mS/mR):1;
   $('#cv-metrics').innerHTML=
-    '<div class="metric good"><span>MAPE, случайный сплит</span><b>'+mR.toFixed(1)+'%</b></div>'+
-    '<div class="metric bad"><span>MAPE, сплит по домам</span><b>'+mS.toFixed(1)+'%</b></div>'+
-    '<div class="metric"><span>Во сколько раз обманулись</span><b>×'+ratio.toFixed(1)+'</b></div>'+
-    '<div class="metric"><span>Соседей выбранной точки в её доме</span><b>'+same+' из '+CV.k+'</b></div>'+
+    '<div class="metric good"><span>MAPE, random split</span><b>'+mR.toFixed(1)+'%</b></div>'+
+    '<div class="metric bad"><span>MAPE, split by building</span><b>'+mS.toFixed(1)+'%</b></div>'+
+    '<div class="metric"><span>How far we fooled ourselves</span><b>×'+ratio.toFixed(1)+'</b></div>'+
+    '<div class="metric"><span>Neighbours of the selected point in its own building</span><b>'+same+' of '+CV.k+'</b></div>'+
     '<div class="verdict">'+(ratio<3
-      ? 'Дома почти не отличаются друг от друга — утечке нечего переносить, разрыв схлопнулся до <b>×'+ratio.toFixed(1)+'</b>. Остаток — не обман, а честная цена незнания территории: на новом месте у модели нет близких аналогов, и полностью этот разрыв не закрывается никогда.'
-      : 'Случайный сплит рисует <b>'+mR.toFixed(1)+'%</b> ошибки, честный — <b>'+mS.toFixed(1)+'%</b>. Разница целиком берётся из того, что модель подглядела цену соседей по подъезду. Ровно на первом числе строятся презентации, после которых модель едет в новый район и разваливается.')+'</div>';
+      ? 'The buildings barely differ from one another — leakage has nothing to carry, and the gap has collapsed to <b>×'+ratio.toFixed(1)+'</b>. What is left is not deception but the honest price of not knowing the territory: in a new place the model has no close analogues, and this gap never closes completely.'
+      : 'The random split draws <b>'+mR.toFixed(1)+'%</b> of error, the honest one <b>'+mS.toFixed(1)+'%</b>. The difference comes entirely from the model peeking at the price of the neighbours on its own stairwell. It is on the first number that presentations get built, after which the model travels to a new district and falls apart.')+'</div>';
 }
-/* ---- полная кросс-валидация по четырём нарезкам ----
-   Состав соседей зависит только от нарезки и от k, но не от разброса между
-   домами. Поэтому 15 ближайших «чужих» соседей для каждой квартиры считаются
-   один раз при загрузке, а ползунки потом лишь пересчитывают цены — иначе
-   каждое движение ползунка стоило бы четырёх полных прогонов kNN. */
+/* ---- full cross-validation over the four schemes ----
+   The composition of the neighbours depends only on the scheme and on k, not on the spread between
+   buildings. So the 15 nearest “foreign” neighbours for every flat are computed
+   once at load time, and the sliders then only recompute prices — otherwise
+   every slider move would cost four full kNN runs. */
 const KMAX=15;
 const SCHEMES=[
-  {id:'rnd',   n:'Случайный сплит', fold:f=>f.fold4, cls:'leaky',
-   note:'кросс-валидация «как по умолчанию»: перемешали квартиры и разбили на четыре части'},
-  {id:'blkpt', n:'Блоки карты, нарезанные по точкам', fold:f=>f.bpt, cls:'trap', trap:true,
-   note:'сетка 4 × 2, в фолд уезжают квартиры, попавшие внутрь блока'},
-  {id:'blkbld',n:'Блоки карты, нарезанные по домам', fold:f=>f.bbld, cls:'honest',
-   note:'та же сетка, но блок собран из целых домов — дом относят по своему центру'},
-  {id:'bld',   n:'По домам, leave-one-building-out', fold:f=>f.b, cls:'honest',
-   note:'26 фолдов: каждый дом по очереди уезжает в тест целиком'}
+  {id:'rnd',   n:'Random split', fold:f=>f.fold4, cls:'leaky',
+   note:'cross-validation “by default”: shuffle the flats and split them into four parts'},
+  {id:'blkpt', n:'Map blocks, cut by points', fold:f=>f.bpt, cls:'trap', trap:true,
+   note:'grid 4 × 2, the flats that fall inside a block go into the fold'},
+  {id:'blkbld',n:'Map blocks, cut by buildings', fold:f=>f.bbld, cls:'honest',
+   note:'the same grid, but a block is assembled from whole buildings — a building is assigned by its own centre'},
+  {id:'bld',   n:'By building, leave-one-building-out', fold:f=>f.b, cls:'honest',
+   note:'26 folds: each building in turn goes into the test as a whole'}
 ];
 SCHEMES.forEach(s=>{
   const fold=flats.map(s.fold);
@@ -1546,19 +1527,19 @@ function schemeStats(s){
     const act=priceOf(t), sm=near.filter(n=>n.r.b===t.b).length;
     e+=Math.abs(pred-act)/act; same+=sm; dist+=near.reduce((a,n)=>a+n.d,0)/near.length;
     if(sm>0)leak++;
-    /* раскладываем промах на две части: «какая у дома своя надбавка»
-       и «где этот дом стоит» — иначе про разницу между двумя честными
-       нарезками можно насочинять любой механизм */
+    /* we split the miss into two parts: “what premium the building has of its own”
+       and “where this building stands” — otherwise you can invent any mechanism you like
+       for the difference between two honest schemes */
     eff+=Math.abs(near.reduce((a,n)=>a+blds[n.r.b].e,0)/near.length-blds[t.b].e)*CV.sigma;
     geo+=Math.abs(near.reduce((a,n)=>a+n.r.base,0)/near.length-t.base)/t.base;
   });
   const n=flats.length;
   return {mape:e/n*100, same:same/n, dist:dist/n, leak:leak/n*100, eff:eff/n*100, geo:geo/n*100};
 }
-const num=(v,d)=>v.toFixed(d).replace('.',',');
-/* та же квартира под двумя нарезками одной сетки — но считаем только те,
-   у которых нарезка по точкам вернула соседа из своего дома. На всей карте
-   эффект размывается усреднением, здесь виден в чистом виде */
+const num=(v,d)=>v.toFixed(d);
+/* the same flat under two schemes on one grid — but we count only those
+   for which the cut by points returned a neighbour from the flat's own building. Across the whole map the
+   effect is diluted by averaging; here it is visible in pure form */
 function leakDetail(){
   const A=SCHEMES.find(s=>s.id==='blkpt'), B=SCHEMES.find(s=>s.id==='blkbld');
   let n=0,ea=0,eb=0;
@@ -1577,10 +1558,10 @@ function renderSplits(){
   const mx=Math.max(...rows.map(r=>r.st.mape));
   $('#cv-splits').innerHTML=rows.map(({s,st})=>
     '<div class="splitrow '+s.cls+'">'
-     +'<h4>'+s.n+(s.trap?'<span class="tag">ЛОВУШКА</span>':'')+'</h4>'
+     +'<h4>'+s.n+(s.trap?'<span class="tag">TRAP</span>':'')+'</h4>'
      +'<div class="m">'+num(st.mape,2)+'%</div>'
-     +'<div class="sub">'+s.note+'<br>соседей из своего дома <b>'+num(st.same,2)+' из '+CV.k
-     +'</b> · сосед в среднем в '+Math.round(st.dist)+' px · с утечкой '+Math.round(st.leak)+'% квартир</div>'
+     +'<div class="sub">'+s.note+'<br>neighbours from its own building <b>'+num(st.same,2)+' of '+CV.k
+     +'</b> · neighbour on average '+Math.round(st.dist)+' px away · with leakage in '+Math.round(st.leak)+'% of flats</div>'
      +'<div class="tr"><i style="width:'+(st.mape/mx*100).toFixed(1)+'%"></i></div>'
     +'</div>').join('');
   const g=id=>rows.find(r=>r.s.id===id).st;
@@ -1588,18 +1569,18 @@ function renderSplits(){
   const cross=bd.mape>bb.mape;
   const L=leakDetail();
   $('#cv-splits-verdict').innerHTML=
-    'Одна и та же сетка блоков даёт <b>'+num(bp.mape,2)+'%</b> и <b>'+num(bb.mape,2)+'%</b> — разница выглядит несущественной, '
-   +'и ровно это усреднение и прячет. Меняли не модель и не размер блока, а единственное правило: куда относить дом, разрезанный границей. '
-   +'Таких домов '+CUTALL+' из '+blds.length+', и из-за них у <b>'+Math.round(bp.leak)+'%</b> квартир среди '+CV.k
-   +' ближайших соседей снова оказывается кто-то из своего же дома. '
-   +'На этих '+L.n+' квартирах нарезка по точкам показывает <b>'+num(L.a,2)+'%</b> вместо <b>'+num(L.b,2)+'%</b> — занижение в <b>×'+num(L.b/Math.max(L.a,1e-9),1)
-   +'</b>. По всей карте оно размывается до ×'+num(bb.mape/bp.mape,2)+', и именно поэтому такая проверка спокойно живёт в проде: итоговая метрика выглядит правдоподобно. '
-   +'Строгая проверка — та, где ошибка выше. '
+    'One and the same block grid gives <b>'+num(bp.mape,2)+'%</b> and <b>'+num(bb.mape,2)+'%</b> — the difference looks insignificant, '
+   +'and that is exactly what the averaging hides. Neither the model nor the block size changed, only one rule: where to assign a building cut by a border. '
+   +'There are '+CUTALL+' such buildings out of '+blds.length+', and because of them <b>'+Math.round(bp.leak)+'%</b> of flats again get someone from their own building among their '+CV.k
+   +' nearest neighbours. '
+   +'On those '+L.n+' flats the cut by points shows <b>'+num(L.a,2)+'%</b> instead of <b>'+num(L.b,2)+'%</b> — an understatement by <b>×'+num(L.b/Math.max(L.a,1e-9),1)
+   +'</b>. Across the whole map it dilutes to ×'+num(bb.mape/bp.mape,2)+', and that is exactly why such validation lives comfortably in production: the final metric looks plausible. '
+   +'The strict check is the one where the error is higher. '
    +(cross
-      ? 'А вот «блоками всегда строже, чем по домам» — не закон. При этом разбросе строже оказывается leave-one-building-out: <b>'+num(bd.mape,2)+'%</b> против <b>'+num(bb.mape,2)+'%</b> у блоков, хотя соседи у него всего в '+Math.round(bd.dist)+' px, а у блоков в '+Math.round(bb.dist)+'. '
-      : 'При этом разбросе блоки строже отдельных домов: <b>'+num(bb.mape,2)+'%</b> против <b>'+num(bd.mape,2)+'%</b> — соседей приходится искать в '+Math.round(bb.dist)+' px вместо '+Math.round(bd.dist)+'. Но это не закон: покрутите разброс, и две последние строки поменяются местами. ')
-   +'Промах раскладывается на две части: «какая у дома своя надбавка» и «где этот дом стоит». У блоков вторая часть больше ('+num(bb.geo,2)+'% против '+num(bd.geo,2)+'% — соседи-то дальше), первая чуть меньше ('+num(bb.eff,2)+'% против '+num(bd.eff,2)+'%), и в сумме они частично гасят друг друга. Так что выбирать нарезку по фольклору «блоки строже» нельзя — выбирать надо под тот риск, которого боитесь: незнакомый дом в знакомом районе или незнакомый район. '
-   +'Случайный сплит для масштаба — <b>'+num(rn.mape,2)+'%</b>, у него сосед лежит в '+Math.round(rn.dist)+' px, то есть в том же доме.';
+      ? 'But “blocks are always stricter than buildings” is not a law. At this spread leave-one-building-out turns out stricter: <b>'+num(bd.mape,2)+'%</b> against <b>'+num(bb.mape,2)+'%</b> for blocks, even though its neighbours are only '+Math.round(bd.dist)+' px away, and for blocks '+Math.round(bb.dist)+'. '
+      : 'At this spread blocks are stricter than individual buildings: <b>'+num(bb.mape,2)+'%</b> against <b>'+num(bd.mape,2)+'%</b> — neighbours have to be looked for '+Math.round(bb.dist)+' px away instead of '+Math.round(bd.dist)+'. But this is not a law: turn the spread and the last two rows will swap places. ')
+   +'The miss breaks down into two parts: “what premium the building has of its own” and “where this building stands”. For blocks the second part is bigger ('+num(bb.geo,2)+'% against '+num(bd.geo,2)+'% — the neighbours are further away, after all), the first slightly smaller ('+num(bb.eff,2)+'% against '+num(bd.eff,2)+'%), and in sum they partly cancel each other out. So you cannot pick a scheme by the folklore that “blocks are stricter” — you pick it for the risk you fear: an unfamiliar building in a familiar district, or an unfamiliar district. '
+   +'The random split, for scale — <b>'+num(rn.mape,2)+'%</b>, its neighbour lies '+Math.round(rn.dist)+' px away, that is, in the same building.';
 }
 
 function renderCVAll(){renderCV();renderSplits()}
@@ -1613,16 +1594,16 @@ renderCVAll();
 
 /* ================= tab: typology (Ward clustering) ================= */
 const TYF=[
-  {k:'fTransport',n:'Транспорт'},
-  {k:'fCentre',n:'Центральность'},
-  {k:'fPoi',n:'Инфраструктура'},
-  {k:'fEnv',n:'Среда'},
-  {k:'comp01',n:'Конкуренция'},
-  {k:'land',n:'Цена земли'}
+  {k:'fTransport',n:'Transport'},
+  {k:'fCentre',n:'Centrality'},
+  {k:'fPoi',n:'Infrastructure'},
+  {k:'fEnv',n:'Environment'},
+  {k:'comp01',n:'Competition'},
+  {k:'land',n:'Land price'}
 ];
 hexes.forEach(h=>{h.comp01=1-h.fNiche});
 
-/* агрегируем гексагоны в районы 3x3 */
+/* aggregate hexagons into 3x3 neighbourhoods */
 const dmap={};
 hexes.forEach(h=>{
   const key=Math.floor(h.c/3)+'_'+Math.floor(h.r/3);
@@ -1634,7 +1615,7 @@ dist7.forEach(d=>{
   d.x=d.members.reduce((s,h)=>s+h.x,0)/d.members.length;
   d.y=d.members.reduce((s,h)=>s+h.y,0)/d.members.length;
 });
-/* z-score по каждому признаку */
+/* z-score for every feature */
 const TYZ=TYF.map((f,j)=>{
   const v=dist7.map(d=>d.f[j]);
   const mu=v.reduce((a,b)=>a+b,0)/v.length;
@@ -1643,7 +1624,7 @@ const TYZ=TYF.map((f,j)=>{
 });
 dist7.forEach(d=>d.z=d.f.map((v,j)=>(v-TYZ[j].mu)/TYZ[j].sd));
 
-/* Уорд через Ланса-Уильямса */
+/* Ward via Lance-Williams */
 const N=dist7.length;
 let DM=[], alive=[], size=[], node=[];
 for(let i=0;i<N;i++){DM[i]=[];alive[i]=true;size[i]=1;node[i]=i}
@@ -1651,7 +1632,7 @@ for(let i=0;i<N;i++)for(let j=0;j<N;j++){
   let s=0;for(let k=0;k<TYF.length;k++){const t=dist7[i].z[k]-dist7[j].z[k];s+=t*t}
   DM[i][j]=s;
 }
-const tree=[]; /* {a,b,h} — узлы склеек */
+const tree=[]; /* {a,b,h} — merge nodes */
 for(let step=0;step<N-1;step++){
   let bi=-1,bj=-1,bv=Infinity;
   for(let i=0;i<N;i++){ if(!alive[i])continue;
@@ -1667,7 +1648,7 @@ for(let step=0;step<N-1;step++){
   }
   size[bi]=ni+nj; alive[bj]=false; node[bi]=N+step;
 }
-/* дерево: children для узлов >= N */
+/* tree: children for nodes >= N */
 const kids={}; tree.forEach((t,m)=>{kids[N+m]=[t.a,t.b]});
 function leavesOf(n){ if(n<N)return [n]; return leavesOf(kids[n][0]).concat(leavesOf(kids[n][1])) }
 const leafOrder=leavesOf(N+tree.length-1);
@@ -1702,12 +1683,12 @@ function reserveFor(k){
 }
 const tysvg=$('#tymap'), tyden=$('#tydendro');
 const plural=(n,a,b,c)=>{const d=n%10,e=n%100;return n+' '+(d===1&&e!==11?a:d>=2&&d<=4&&(e<10||e>=20)?b:c)};
-/* тона из палитры планшета: контур насыщенный, заливка полупрозрачная —
-   чтобы вкладка не выглядела как другой продукт и читалась в ч/б */
-/* восемь тонов из палитры планшета, расставлены так, чтобы близкие
-   (два бирюзовых, два ржавых) появлялись как можно позже: до k=6 в ходу шесть заведомо
-   различимых тонов, похожие подключаются только на 7 и 8. Плюс номер кластера рисуется
-   прямо на карте — цвет не единственный способ опознать группу. */
+/* tones from the dashboard palette: saturated outline, semi-transparent fill —
+   so the tab does not look like a different product and reads in black and white */
+/* eight tones from the dashboard palette, ordered so that similar ones
+   (two teals, two rusts) appear as late as possible: up to k=6 six clearly
+   distinguishable tones are in play, similar ones join only at 7 and 8. Plus the cluster number is drawn
+   right on the map — colour is not the only way to identify a group. */
 const TYPAL=['#1F5B6B','#B23A17','#6C2BD9','#4A7A3F','#8A6D1F','#57655C','#2E6E86','#7A2E12'];
 const tyColor=k=>TYPAL[k%TYPAL.length];
 let TYK=7;
@@ -1715,7 +1696,7 @@ function renderTypo(){
   const lab=assignK(TYK);
   dist7.forEach((d,i)=>d.cl=lab[i]);
 
-  /* карта */
+  /* map */
   tysvg.innerHTML='';
   const g=el('g',{}); tysvg.appendChild(g);
   dist7.forEach(d=>d.members.forEach(hx=>{
@@ -1726,7 +1707,7 @@ function renderTypo(){
     g.appendChild(el('circle',{cx:m.x,cy:m.y,r:4.2,fill:'#17231D'}));
     g.appendChild(el('circle',{cx:m.x,cy:m.y,r:1.8,fill:'#F1F3ED'}));
   });
-  /* номер кластера в его центре тяжести — цвет не единственный способ опознать группу */
+  /* cluster number at its centre of gravity — colour is not the only way to identify a group */
   for(let c=0;c<TYK;c++){
     const mem=dist7.filter(d=>d.cl===c); if(!mem.length)continue;
     const cx=mem.reduce((s,d)=>s+d.x,0)/mem.length, cy=mem.reduce((s,d)=>s+d.y,0)/mem.length;
@@ -1734,19 +1715,19 @@ function renderTypo(){
     const t=el('text',{x:cx,y:cy+4.5,'text-anchor':'middle','font-family':'JetBrains Mono, monospace',
       'font-size':12,'font-weight':600,fill:tyColor(c)}); t.textContent=c+1; g.appendChild(t);
   }
-  $('#ty-legend').textContent=dist7.length+' районов · '+plural(TYK,'кластер','кластера','кластеров')+' · цифры — номера кластеров, точки — станции метро';
+  $('#ty-legend').textContent=dist7.length+' neighbourhoods · '+plural(TYK,'cluster','clusters','clusters')+' · the digits are cluster numbers, the dots are metro stations';
 
-  /* профили + поиск резерва */
-  /* профили и вердикт берутся из одного расчёта, чтобы они не могли разъехаться */
+  /* profiles + search for headroom */
+  /* profiles and verdict come from a single computation, so they cannot drift apart */
   const {groups,best}=reserveFor(TYK);
-  /* резерв: доступность выше средней по городу, а цена земли ниже.
-     Порог 0,5σ по обеим осям — чтобы не объявлять находкой шум на 90 синтетических районах. */
+  /* headroom: accessibility above the city average and land price below.
+     A threshold of 0.5σ on both axes — so as not to declare noise on 90 synthetic neighbourhoods a find. */
   const stable=[]; for(let k=2;k<=8;k++)if(reserveFor(k).best)stable.push(k);
   $('#ty-profiles').innerHTML=groups.map(gr=>{
     const isRes=best&&best.c===gr.c;
     return '<div class="profcard'+(isRes?' reserve':'')+'">'+
-      '<h4><span class="sw" style="background:'+tyColor(gr.c)+'"></span>Кластер '+(gr.c+1)+(isRes?'<span class="badge">РЕЗЕРВ</span>':'')+'</h4>'+
-      '<div class="cnt">'+gr.n+' районов из '+dist7.length+'</div>'+
+      '<h4><span class="sw" style="background:'+tyColor(gr.c)+'"></span>Cluster '+(gr.c+1)+(isRes?'<span class="badge">HEADROOM</span>':'')+'</h4>'+
+      '<div class="cnt">'+gr.n+' neighbourhoods out of '+dist7.length+'</div>'+
       TYF.map((f,j)=>{
         const z=Math.max(-2,Math.min(2,gr.z[j]));
         const w=Math.abs(z)/2*48;
@@ -1755,14 +1736,14 @@ function renderTypo(){
       }).join('')+'</div>';
   }).join('');
   $('#ty-verdict').innerHTML=(best
-    ? '<div class="verdict">Кластер <b>'+(best.c+1)+'</b>: транспортная доступность на <b>'+best.acc.toFixed(2)+'σ</b> выше средней по городу, а цена земли на <b>'+Math.abs(best.price).toFixed(2)+'σ</b> ниже. Разрыв в <b>'+best.gap.toFixed(2)+'σ</b> — это и есть резерв: место, где хорошая доступность ещё не заложена в цену.</div>'
-    : '<div class="verdict">При этом числе кластеров разрыв не дотягивает до порога в 0,5σ по обе стороны — находкой это называть рано. Подвигайте ползунок: если резерв появляется только при одном значении k, это шум, а не сигнал.</div>')
-    +'<p class="note" style="margin-top:10px">Проверка устойчивости: при значениях k от 2 до 8 резерв по порогу 0,5σ находится '
-    +(stable.length?'при k = '+stable.join(', ')+(stable.length<3?' — то есть вывод держится в узком диапазоне и требует проверки на реальных ценах.':' — вывод устойчив к выбору числа кластеров.'):'ни при одном значении.')
+    ? '<div class="verdict">Cluster <b>'+(best.c+1)+'</b>: transport accessibility is <b>'+best.acc.toFixed(2)+'σ</b> above the city average, while land price is <b>'+Math.abs(best.price).toFixed(2)+'σ</b> below. A gap of <b>'+best.gap.toFixed(2)+'σ</b> — and that is the headroom: a place where good accessibility is not yet priced in.</div>'
+    : '<div class="verdict">At this number of clusters the gap does not reach the 0.5σ threshold on both sides — it is too early to call this a find. Move the slider: if headroom appears at only one value of k, that is noise, not signal.</div>')
+    +'<p class="note" style="margin-top:10px">Stability check: across values of k from 2 to 8, headroom at the 0.5σ threshold is found '
+    +(stable.length?'at k = '+stable.join(', ')+(stable.length<3?' — that is, the conclusion holds over a narrow range and needs checking against real prices.':' — the conclusion is stable with respect to the number of clusters.'):'at no value at all.')
     +'</p>'
-    +'<p class="note" style="margin-top:8px">Цена земли здесь модельная: она собрана из доступности, среды и престижа, поэтому часть разрыва предопределена весами, а не найдена в данных. В рабочей задаче на её месте медиана цен реальных сделок по району — и тогда вывод перестаёт быть предопределённым. Порог — 0,5σ по обеим осям.</p>';
+    +'<p class="note" style="margin-top:8px">Land price here is modelled: it is assembled from accessibility, environment and prestige, so part of the gap is predetermined by the weights rather than found in the data. In a production task the median price of real transactions in the neighbourhood goes here instead — and then the conclusion stops being predetermined. The threshold is 0.5σ on both axes.</p>';
 
-  /* дендрограмма */
+  /* dendrogram */
   tyden.innerHTML='';
   const dg=el('g',{}); tyden.appendChild(dg);
   const W=770, H=150, PADL=15, PADT=18;
@@ -1784,9 +1765,9 @@ function renderTypo(){
   dg.appendChild(el('line',{x1:PADL-8,y1:Y(cutH),x2:PADL+W+8,y2:Y(cutH),
     stroke:'#6C2BD9','stroke-width':1.6,'stroke-dasharray':'7 5'}));
   dg.appendChild(el('text',{x:PADL+W+2,y:Y(cutH)-7,'text-anchor':'end',
-    'font-family':'JetBrains Mono, monospace','font-size':11,fill:'#6C2BD9'})).textContent='разрез на '+plural(TYK,'кластер','кластера','кластеров');
+    'font-family':'JetBrains Mono, monospace','font-size':11,fill:'#6C2BD9'})).textContent='cut at '+plural(TYK,'cluster','clusters','clusters');
   const D2=v=>Math.sqrt(v).toFixed(2);
-  $('#ty-cut').textContent='Пунктир проходит на '+D2(cutH)+'. Соседние склейки: '+D2(tree[cutIdx-1].h)+' и '+D2(tree[cutIdx].h)+' z-расстояния. Чем больше разрыв между этими числами, тем устойчивее выбранное число кластеров.';
+  $('#ty-cut').textContent='The dashed line runs at '+D2(cutH)+'. Adjacent merges: '+D2(tree[cutIdx-1].h)+' and '+D2(tree[cutIdx].h)+' z-distance. The bigger the gap between these numbers, the more stable the chosen number of clusters.';
 }
 $('#ty-k').addEventListener('input',e=>{TYK=+e.target.value;$('#ty-k-v').textContent=TYK;renderTypo()});
 renderTypo();
